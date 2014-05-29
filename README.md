@@ -24,13 +24,11 @@ Schedule app.
 
 ### <u>Technical structure</u>
 
-<b>The project is divided into 3 main parts:</b>
+<b>The project is divided into 2 main parts:</b>
 
-* First
+* Database witch contains all workers information.
 
-* Second
-
-* Third
+* Schedule algorithm.
 
 ***
 
