@@ -40,10 +40,9 @@ Schedule app.
 
 ### <u>Iterations:</u>
 
-* [MS0](https://github.com/AntonLitovka/Schedule-_app)
+* [Iteration1](https://github.com/AntonLitovka/Schedule-_app/issues?milestone=4)
 
-* [MS1](https://github.com/AntonLitovka/Schedule-_app)
-
+* [Iteration2](https://github.com/AntonLitovka/Schedule-_app/issues?milestone=5)
 
 ***
 
