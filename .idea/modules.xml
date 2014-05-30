@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/rails_projects/Schedule _app/.idea/sample_app.iml" filepath="$USER_HOME$/rails_projects/Schedule _app/.idea/sample_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Schedule-app.iml" filepath="$PROJECT_DIR$/.idea/Schedule-app.iml" />
     </modules>
   </component>
 </project>
