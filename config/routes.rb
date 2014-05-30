@@ -24,7 +24,7 @@ SampleApp::Application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   ghttps://mail.google.com/mail/u/0/?ui=2&ik=38492ea93b&view=att&th=1463a76e4fedf19e&attid=0.1&disp=safe&realattid=f_hvoaqjvp0&zwet 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
