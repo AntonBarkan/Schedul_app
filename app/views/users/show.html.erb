@@ -1,0 +1,28 @@
+<%= @user.name %>, <%= @user.email %>
+
+<br/>
+<br/>
+
+<%= select_tag 'week', options_for_select(["this week" , "next week"]) %>
+
+
+<table style="width:300px; height: 300px;">
+  <tr>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+
