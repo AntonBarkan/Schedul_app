@@ -21,8 +21,9 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
 
-        <%= f.label :position, "Position - full/part" %>
-        <%= f.text_field :position %>
+        <%= f.label :position, 'Position - full/part' %>
+        <%= f.radio_button 'position', 'full' %><%= f.label :position ,'full' %>
+        <%= f.radio_button 'position', 'part' %><%= f.label :position ,'part' %>
 
         <%= f.label :shabat, "Working on shabat or not" %>
         <%= f.radio_button 'shabat', 'yes' %><%= f.label :shabat ,'yes' %>

@@ -12,10 +12,18 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
    end
 
+   def update
+     @user = User.find params[:id]
+     @user.update_attributes!(params[user_params])
+     flash[:notice] = "#{@user.name} was successfully updated."
+     redirect_to showall_path
+   end
+
    def create
      @user = User.new(user_params)
      if @user.save
        flash[:success] = "Welcome to the Schedule App!"
+       sign_in user
        redirect_to @user
      else
        render 'new'
