@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
-
    def create
      @user = User.new(user_params)
      if @user.save
@@ -24,7 +22,7 @@ class UsersController < ApplicationController
 
    def user_params
      params.require(:user).permit(:name, :email, :password,
-                                  :password_confirmation)
+                                  :password_confirmation, :id_number, :position, :shabat, :admin)
    end
 
 end

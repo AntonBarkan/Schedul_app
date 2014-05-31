@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password,
                             if: lambda { |m| m.password.present? }
 
+  before_save {self.admin = 'no'}
   before_save {self.email = email.downcase}
   before_create :create_remember_token
+
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

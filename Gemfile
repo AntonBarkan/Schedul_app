@@ -13,8 +13,13 @@ group :development, :test do
 end
 
 group :test do
+  gem 'launchy'
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
 
   # OS X: раскомментируйте эти строки.
   # gem 'growl', '1.0.3'

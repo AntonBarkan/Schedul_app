@@ -1,4 +1,23 @@
-<%= @user.name %>, <%= @user.email %>
+<table>
+  <tr>
+    <th>Name:</th>    <th><%= @user.name %></br></th>
+  </tr>
+  <tr>
+    <th>ID:</th>    <th><%= @user.id_number%></th>
+  </tr>
+  <tr>
+    <th>Email:</th>    <th><%= @user.email %></th>
+  </tr>
+  <tr>
+    <th>Position:</th>    <th><%= @user.position %></th>
+  </tr>
+  <tr>
+    <th>Working on shabat:</th>    <th><%= @user.shabat %></th>
+  </tr>
+  <tr>
+    <th>Admin:</th> <th><%= @user.admin %></th>
+  </tr>
+</table>
 
 <br/>
 <br/>
@@ -13,14 +32,14 @@
     <td onclick='changeColor(this)'></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
+    <td onclick='changeColor(this)'></td>
   </tr>
 </table>
 
