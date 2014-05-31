@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
 
+
+
   private
 
   def create_remember_token
