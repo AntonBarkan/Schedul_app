@@ -5,24 +5,55 @@
 
 <%= select_tag 'week', options_for_select(["this week" , "next week"]) %>
 
+<table style="margin: 0px auto;width: 60%;text-align: center;">
+  <tr>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Sunday" %>
+    </td>
+  </tr>
+  <tr>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Monday" %>
+    </td>
+  </tr>
+  <tr>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Tuesday" %>
+    </td>
+  </tr>
+  <tr>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Wednesday" %>
+    </td>
 
-<table style="width:300px; height: 300px;">
-  <tr>
-    <td onclick='changeColor(this)'></td>
-    <td onclick='changeColor(this)'></td>
-    <td onclick='changeColor(this)'></td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Tuesday" %>
+    </td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Friday" %>
+    </td>
   </tr>
+  <tr>
+    <td onclick='changeColor(this)'>
+      <%= label :some_label, "Saturday" %>
+    </td>
+  </tr>
+
 </table>
+
+<br>
+
+
+<div style="text-align:center">
+  <%= link_to "Submit", '#', :onclick => "submit()", class: "btn btn-large btn-primary" %>
+</div>
+
+
+
 
 
 
