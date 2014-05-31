@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Name</th><th>ID number</th><th>Email</th><th>Position</th><th>Shabat</th><th>Admin</th>
+    <th>Edit</th>
+  </tr>
+  <% @allusrs = User.find(:all)%>
+  <% @allusrs.each do |usr| %>
+      <tr>
+        <th><%= usr.name %></th><th><%= usr.id_number %></th><th><%= usr.email %></th>
+        <th><%= usr.position %></th><th><%= usr.shabat %></th><th><%= usr.admin %></th>
+        <th><%= link_to 'Edit', edit_user_path(usr)%></th>
+      </tr>
+  <%end%>
+
+</table>
