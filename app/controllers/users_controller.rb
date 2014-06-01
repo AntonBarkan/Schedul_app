@@ -11,13 +11,12 @@ class UsersController < ApplicationController
   end
 
    def submit
-
-     puts "--------------"
+     arr = Hash.new
+     params['string'].split('$').each do |param|
+       splitted = param.split('=')
+        arr[splitted[0]] = splitted[1]
+     end
    end
-
-
-
-
 
    def create
      @user = User.new(user_params)
