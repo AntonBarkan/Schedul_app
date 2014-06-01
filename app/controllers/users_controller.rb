@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-   def show
+    @@calendar_user = Google::APIClient.new
+
+  def show
     @user = User.find(params[:id])
   end
 
