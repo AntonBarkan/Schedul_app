@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-   def show
+    @@calendar_user = Google::APIClient.new
+
+  def show
     @user = User.find(params[:id])
     @schedule = [true,true,true]
   end
@@ -10,27 +12,25 @@ class UsersController < ApplicationController
 
   end
 
-   def submit
-     arr = Hash.new
-     params['string'].split('$').each do |param|
-       splitted = param.split('=')
-        arr[splitted[0]] = splitted[1]
-     end
+   def edit
+     @user = User.find(params[:id])
+   end
    end
 
-   def submit_part
-     arr = Hash.new
-     params['string'].split('$').each do |param|
-       splitted = param.split('=')
-       arr[splitted[0]] = splitted[1]
-     end
+   def update
+     @user = User.find params[:id]
+     @user.update_attributes!(params[user_params])
+     flash[:notice] = "#{@user.name} was successfully updated."
+     redirect_to showall_path
+   end
    end
 
 
    def create
      @user = User.new(user_params)
      if @user.save
-       flash[:success] = "Welcome #{@user.name}!"
+       flash[:success] = "Welcome to the Schedule App!"
+       sign_in user
        redirect_to @user
      else
        render 'new'
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
    def user_params
      params.require(:user).permit(:name, :email, :password,
-                                  :password_confirmation)
+                                  :password_confirmation, :id_number, :position, :shabat, :admin)
    end
 
 end

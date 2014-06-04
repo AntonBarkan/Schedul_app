@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
@@ -20,7 +28,7 @@
     <file path="/about.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399679428249" ignored="false" />
     <file path="/authentication_pages_spec.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399683133466" ignored="false" />
     <file path="/sessions_helper.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399733221061" ignored="false" />
-    <file path="/sessions_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400339213429" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401909981665" ignored="false" />
     <file path="/show.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401907146847" ignored="false" />
     <file path="/table.js" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401895302692" ignored="false" />
     <file path="/step_holder.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399743235098" ignored="false" />
@@ -82,7 +90,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="48" selection-start="630" selection-end="641" vertical-scroll-proportion="0.0">
+            <state line="22" column="48" selection-start="745" selection-end="756" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +99,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="63" selection-start="190" selection-end="190" vertical-scroll-proportion="0.4373178">
+            <state line="5" column="43" selection-start="95" selection-end="95" vertical-scroll-proportion="0.2186589">
               <folding />
             </state>
           </provider>
@@ -804,7 +812,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -993,14 +1001,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="48" selection-start="630" selection-end="641" vertical-scroll-proportion="0.0">
+        <state line="22" column="48" selection-start="745" selection-end="756" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="63" selection-start="190" selection-end="190" vertical-scroll-proportion="0.4373178">
+        <state line="5" column="43" selection-start="95" selection-end="95" vertical-scroll-proportion="0.2186589">
           <folding />
         </state>
       </provider>

@@ -14,6 +14,8 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/showall', to: 'static_pages#showall', via: 'get'
+  #match "/auth/:provider/callback" => "sessions#login"
 
 
   #------------ajax calls
@@ -29,7 +31,7 @@ SampleApp::Application.routes.draw do
 
   # Example of regular route:
   #   ghttps://mail.google.com/mail/u/0/?ui=2&ik=38492ea93b&view=att&th=1463a76e4fedf19e&attid=0.1&disp=safe&realattid=f_hvoaqjvp0&zwet 'products/:id' => 'catalog#view'
-
+  #   get 'products/:id' => 'catalog#view'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
