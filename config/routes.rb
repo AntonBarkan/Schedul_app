@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "users/new"
 
 
@@ -16,7 +17,10 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/showall', to: 'static_pages#showall', via: 'get'
-  match '/auth/:provider/callback', to: 'sessions#login', via: 'get'
+  #match '/auth/:provider/callback', to: 'sessions#login', via: 'get'
+
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar,
+        :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
 
   # The priority is based upon order of creation: first created -> highest priority.
