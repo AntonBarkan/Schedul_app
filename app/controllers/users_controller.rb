@@ -18,6 +18,10 @@ class UsersController < ApplicationController
      end
    end
 
+   def submit_part
+
+   end
+
 
    def create
      @user = User.new(user_params)
