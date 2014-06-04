@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/part_time_table.html.erb" afterPath="$PROJECT_DIR$/app/views/users/part_time_table.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
@@ -13,7 +12,7 @@
     <file path="/Ruby Console" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399658450352" ignored="false" />
     <file path="/user.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401559660526" ignored="false" />
     <file path="/user_spec.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399727118797" ignored="false" />
-    <file path="/Dummy.txt" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401898422804" ignored="false" />
+    <file path="/Dummy.txt" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401906548685" ignored="false" />
     <file path="/20140509214610_add_index_to_users_email.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399672070512" ignored="false" />
     <file path="/new.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400085892443" ignored="false" />
     <file path="/users_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401906459155" ignored="false" />
@@ -24,7 +23,7 @@
     <file path="/authentication_pages_spec.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399683133466" ignored="false" />
     <file path="/sessions_helper.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399733221061" ignored="false" />
     <file path="/sessions_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400339213429" ignored="false" />
-    <file path="/show.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401891521207" ignored="false" />
+    <file path="/show.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401907146847" ignored="false" />
     <file path="/table.js" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1401895302692" ignored="false" />
     <file path="/step_holder.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399743235098" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/TDD/lib/StepsHolder/step_holder.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399743872159" ignored="false" />
@@ -64,15 +63,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="516" selection-end="516" vertical-scroll-proportion="0.4883041">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="boot.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/boot.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="39" selection-start="231" selection-end="231" vertical-scroll-proportion="-7.5">
+            <state line="7" column="52" selection-start="179" selection-end="179" vertical-scroll-proportion="0.30612245">
               <folding />
             </state>
           </provider>
@@ -150,12 +140,12 @@
         <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/full_time_table.html" />
         <option value="$PROJECT_DIR$/app/views/users/part_time_table.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/full_time_table.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/table.js" />
         <option value="$PROJECT_DIR$/app/views/users/part_time_table.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
       </list>
     </option>
   </component>
@@ -969,7 +959,11 @@
       <created>1401898429371</created>
       <updated>1401898429371</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="part time parser server side">
+      <created>1401906551333</created>
+      <updated>1401906551333</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1058,7 +1052,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="part time client side" />
+    <option name="LAST_COMMIT_MESSAGE" value="part time parser server side" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1077,16 +1071,10 @@
     <MESSAGE value="server side jeson, string parser for full time" />
     <MESSAGE value="lost files" />
     <MESSAGE value="part time client side" />
+    <MESSAGE value="part time parser server side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/controllers/users_controller.rb</url>
-          <line>25</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="9" />
     </breakpoint-manager>
   </component>
@@ -1141,13 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/boot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/full_time_table.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="26" selection-start="11" selection-end="26" vertical-scroll-proportion="0.0">
@@ -1165,9 +1146,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/part_time_table.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="48" selection-start="630" selection-end="641" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="516" selection-end="516" vertical-scroll-proportion="0.4883041">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/boot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1179,23 +1174,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="48" selection-start="630" selection-end="641" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="231" selection-end="231" vertical-scroll-proportion="-7.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/part_time_table.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="8" selection-start="516" selection-end="516" vertical-scroll-proportion="0.4883041">
+        <state line="7" column="52" selection-start="179" selection-end="179" vertical-scroll-proportion="0.30612245">
           <folding />
         </state>
       </provider>
