@@ -19,7 +19,11 @@ class UsersController < ApplicationController
    end
 
    def submit_part
-
+     arr = Hash.new
+     params['string'].split('$').each do |param|
+       splitted = param.split('=')
+       arr[splitted[0]] = splitted[1]
+     end
    end
 
 
