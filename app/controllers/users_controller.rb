@@ -15,7 +15,7 @@ class UsersController < ApplicationController
    def edit
      @user = User.find(params[:id])
    end
-   end
+
 
    def update
      @user = User.find params[:id]
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
      flash[:notice] = "#{@user.name} was successfully updated."
      redirect_to showall_path
    end
-   end
+
 
 
    def create
