@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "users/new"
 
 
@@ -17,6 +18,8 @@ SampleApp::Application.routes.draw do
   match '/showall', to: 'static_pages#showall', via: 'get'
   #match "/auth/:provider/callback" => "sessions#login"
 
+  #get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar,
+  #      :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   #------------ajax calls
   post '/ajax/submit'      => 'users#submit'

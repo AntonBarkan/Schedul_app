@@ -9,6 +9,9 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
 
+        <%= f.label :id_number %>
+        <%= f.text_field :id_number %>
+
         <%= f.label :email %>
         <%= f.text_field :email %>
 
@@ -17,6 +20,15 @@
 
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
+
+        <%= f.label :position, 'Position - full/part' %>
+        <%= f.radio_button 'position', 'full' %><%= f.label :position ,'full' %>
+        <%= f.radio_button 'position', 'part' %><%= f.label :position ,'part' %>
+
+        <%= f.label :shabat, "Working on shabat or not" %>
+        <%= f.radio_button 'shabat', 'yes' %><%= f.label :shabat ,'yes' %>
+        <%= f.radio_button 'shabat', 'no' %><%= f.label :shabat ,'no' %>
+
 
         <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>

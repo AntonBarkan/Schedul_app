@@ -40795,3 +40795,445 @@ ActionController::RoutingError (uninitialized constant UsersController::Google):
   Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.1ms)
   Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (113.5ms)
   Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (375.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNewColums (20140530160324)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "users" ADD "id_number" varchar(255)[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "users" ADD "position" varchar(255)
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "shabat" varchar(255)[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140530160324"]]
+  [1m[36m (125.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdmin (20140531110341)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "admin" varchar(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140531110341"]]
+  [1m[36m (123.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCalendars (20140531162122)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140531162122"]]
+  [1m[36m (128.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20140604184717)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140604184717"]]
+  [1m[36m (143.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-06-04 23:36:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 136ms
+
+NameError (uninitialized constant UsersController::GoogleCalendar):
+  app/controllers/users_controller.rb:8:in `show'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (39.6ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (142.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-06-04 23:36:54 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/full_time_table.html.erb (38.1ms)
+  Rendered users/part_time_table.html.erb (16.1ms)
+  Rendered users/show.html.erb within layouts/application (63.1ms)
+  Rendered layouts/_shim.html.erb (1.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'af3a8b9908dcf3b1e53ac66fd4b4c07b962f1023' LIMIT 1
+  Rendered layouts/_header.html.erb (282.9ms)
+  Rendered layouts/_footer.html.erb (2.8ms)
+Completed 200 OK in 1004ms (Views: 903.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+
+Started GET "/stylesheets/dialog.css" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/dialog.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (21.4ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.3ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (128.8ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (304.3ms)
+
+
+Started GET "/stylesheets/fullcalendar.css" for 127.0.0.1 at 2014-06-04 23:36:56 +0300
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/fullcalendar.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.7ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (110.9ms)
+
+
+Started GET "/stylesheets/jquery-ui.css" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/jquery-ui.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.7ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.7ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (142.7ms)
+
+
+Started GET "/stylesheets/style.css" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/style.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.7ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.5ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (97.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:57 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/assets/table.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+
+Started GET "/javascripts/jrails1/fullcalendar.js" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jrails1/fullcalendar.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.6ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (110.3ms)
+
+
+Started GET "/javascripts/jrails1/jquery-ui.js" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jrails1/jquery-ui.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (102.9ms)
+
+
+Started GET "/javascripts/jrails1/gcal.js" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jrails1/gcal.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.9ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.1ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.7ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (111.2ms)
+
+
+Started GET "/javascripts/jrails1/jquery.validate.js" for 127.0.0.1 at 2014-06-04 23:36:58 +0300
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jrails1/jquery.validate.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.1ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.1ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (108.2ms)
+
+
+Started GET "/javascripts/jrails1/jrails.js" for 127.0.0.1 at 2014-06-04 23:36:59 +0300
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jrails1/jrails.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/anton/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.4ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.4ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /home/anton/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (104.9ms)
