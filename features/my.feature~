@@ -1,0 +1,9 @@
+Feature: Login
+	Scenario Outline: Successful login
+      Given a user "anton@gmail.com" with password "123456"
+	  And I am on the login page
+	  And I fill in "user_name" with "<username>"
+	  And  I fill in "user_password" with "<pass>"
+	  When I press "Log in"
+	  Then I should see "Welcome, aslak"
+
