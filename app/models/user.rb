@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
                             if: lambda { |m| m.password.present? }
 
   before_save {self.email = email.downcase}
-  before_create {self.admin = 'yes'}
+  before_create {self.admin = 'no'}
   before_create :create_remember_token
 
 
