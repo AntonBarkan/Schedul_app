@@ -214,7 +214,7 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
-  gcal4ruby (~> 0.5.5)
+  gcal4ruby (= 0.5.5)
   guard-rspec (= 2.5.0)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)

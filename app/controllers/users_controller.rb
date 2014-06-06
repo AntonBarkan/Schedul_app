@@ -2,7 +2,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    require "rubygems"
+    require "gcal4ruby"
+    
+    @serv = Service.new
+    @serv.debug = false
+    @serv.authenticate 'simplesheduleapp@gmail.com', '1@3$5^7*'
+    events = GCal4Ruby::Event.find serv, {'start-min' => Time.now.utc.xmlschema,
+                                          :calendar => 'example-cal%40example.com'}
 
+    @evnts = events.each
   end
 
   def new
