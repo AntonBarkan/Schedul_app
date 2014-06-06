@@ -25,11 +25,7 @@ module SessionsHelper
   end
 
   def sign_out
-<<<<<<< HEAD
     if(current_user.nil?)
-=======
-    if(current_user  == nil)
->>>>>>> master
       return
     end
     current_user.update_attribute(:remember_token,

@@ -2,25 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-<<<<<<< HEAD
 
-    #require "gcal4ruby"
-    #@serv = Service.new
-    #@serv.debug = false
-    #@serv.authenticate 'simplesheduleapp@gmail.com', '1@3$5^7*'
-    #events = GCal4Ruby::Event.find serv, {'start-min' => Time.now.utc.xmlschema,
-                                          #:calendar => 'example-cal%40example.com'}
-
-
-    #require_relative "home/dima//Desktop/CloudCourse/sample_app/bin/google_calendar"
-
-    #cal = Google::Calendar.new(:username => 'simplesheduleapp@gmail.com',
-    #                           :password => '1@3$5^7*',
-    #                           :app_name => 'scheduleapp')
-
-    #@evnts = cal.events
-=======
->>>>>>> master
   end
 
   def new
