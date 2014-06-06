@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+<<<<<<< HEAD
 
     #require "gcal4ruby"
     #@serv = Service.new
@@ -18,6 +19,8 @@ class UsersController < ApplicationController
     #                           :app_name => 'scheduleapp')
 
     #@evnts = cal.events
+=======
+>>>>>>> master
   end
 
   def new
@@ -30,7 +33,10 @@ class UsersController < ApplicationController
 
    def update
      @user = User.find params[:id]
-     @user.update_attributes!(params[user_params])
+     #@user.update_attributes!(params[user_params])
+     User.update(params[:id], :name => 'Hello')
+     @user.update(:name => 'Hello')
+     @user.update(params[:admin])
      flash[:notice] = "#{@user.name} was successfully updated."
      redirect_to showall_path
    end

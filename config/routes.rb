@@ -1,5 +1,8 @@
 SampleApp::Application.routes.draw do
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -17,6 +20,11 @@ SampleApp::Application.routes.draw do
   match '/showall', to: 'static_pages#showall', via: 'get'
   #match '/auth/:provider/callback', to: 'sessions#login', via: 'get'
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
