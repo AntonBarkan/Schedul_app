@@ -4,12 +4,6 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
 
-    cal = GoogleCalendar::Client.new "688144363652-brriul4ifu7rubps2hspt2c1ujhdth87.apps.googleusercontent.com",
-                                        "ol6yRPwEtD0g_dN94jzNemo0", "http://localhost/oauth2callback"
-
-    if(!cal.nil?)
-      @events = cal.events
-    end
   end
 
   def new
