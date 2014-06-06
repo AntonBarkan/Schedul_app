@@ -1,0 +1,1409 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb3aece48, pid=23441, tid=2146540352
+#
+# JRE version: 6.0_30-b30
+# Java VM: OpenJDK Server VM (23.25-b01 mixed mode linux-x86 )
+# Problematic frame:
+# J  sun.awt.GlobalCursorManager.updateCursorImmediately()V
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x83a07000):  JavaThread "AWT-EventQueue-2 6.3#RM-135.588, eap:false" [_thread_in_Java, id=23474, stack(0x7fec9000,0x7ff1a000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000004
+
+Registers:
+EAX=0x00000000, EBX=0x915a4530, ECX=0x00000000, EDX=0x878aabc8
+ESP=0x7ff18b00, EBP=0x7b5a2e28, ESI=0xa657f440, EDI=0x915dca68
+EIP=0xb3aece48, EFLAGS=0x00210246, CR2=0x00000004
+
+Top of Stack: (sp=0x7ff18b00)
+0x7ff18b00:   7b5a2e28 00000000 04000021 00000000
+0x7ff18b10:   00004000 00000000 7b5a2e28 00000000
+0x7ff18b20:   92b90548 930131b0 930131b0 928400c0
+0x7ff18b30:   9417ecf8 914767b0 7b5a2e28 00000000
+0x7ff18b40:   91453d80 83a07000 040000a7 00000000
+0x7ff18b50:   00000001 7ff18b70 7ff18b94 b3503235
+0x7ff18b60:   a719ea58 00000000 7ff18b74 b3503235
+0x7ff18b70:   92b90548 7ff18b74 a707ecd3 7ff18b9c 
+
+Instructions: (pc=0xb3aece48)
+0xb3aece28:   d2 75 e5 85 ed 74 11 8b 55 14 85 d2 74 0a b9 80
+0xb3aece38:   3d 45 91 e8 20 05 a4 ff 66 66 90 e8 18 85 ee ff
+0xb3aece48:   8b 58 04 8b 4b 38 81 f9 50 bf 08 a7 0f 85 06 03
+0xb3aece58:   00 00 81 fb 58 e7 0d a7 0f 85 83 19 00 00 89 44 
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x915a4530 is an oop
+java.util.concurrent.locks.ReentrantLock$NonfairSync 
+ - klass: 'java/util/concurrent/locks/ReentrantLock$NonfairSync'
+ECX=0x00000000 is an unknown value
+EDX=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x7fec9000,0x7ff1a000],  sp=0x7ff18b00,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  sun.awt.GlobalCursorManager.updateCursorImmediately()V
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0a25ec00 JavaThread "JobScheduler FJ pool 2/4" daemon [_thread_blocked, id=23582, stack(0x7c75e000,0x7c7af000)]
+  0x0a18ec00 JavaThread "JobScheduler FJ pool 1/4" daemon [_thread_blocked, id=23580, stack(0x800af000,0x80100000)]
+  0x0a255800 JavaThread "JobScheduler FJ pool 3/4" daemon [_thread_blocked, id=23575, stack(0x7c3af000,0x7c400000)]
+  0x7e72b800 JavaThread "RefCountingStorage write content helper" [_thread_blocked, id=23548, stack(0x7cf85000,0x7cfd6000)]
+  0x7c5ddc00 JavaThread "JobScheduler FJ pool 0/4" daemon [_thread_blocked, id=23544, stack(0x7cee3000,0x7cf34000)]
+  0x7c596400 JavaThread "ApplicationImpl pooled thread 13" daemon [_thread_blocked, id=23538, stack(0x7c7af000,0x7c800000)]
+  0x7c587000 JavaThread "ApplicationImpl pooled thread 12" [_thread_blocked, id=23537, stack(0x7ce41000,0x7ce92000)]
+  0x84cb3800 JavaThread "ApplicationImpl pooled thread 11" [_thread_blocked, id=23536, stack(0x7ce92000,0x7cee3000)]
+  0x7cdc9800 JavaThread "Encoding detection thread" daemon [_thread_blocked, id=23531, stack(0x7cf34000,0x7cf85000)]
+  0x7fae2000 JavaThread "ApplicationImpl pooled thread 10" [_thread_blocked, id=23503, stack(0x7cfd6000,0x7d027000)]
+  0x7fa2b800 JavaThread "ApplicationImpl pooled thread 9" [_thread_blocked, id=23502, stack(0x7d078000,0x7d0c9000)]
+  0x7fae1000 JavaThread "ApplicationImpl pooled thread 8" [_thread_blocked, id=23501, stack(0x7d027000,0x7d078000)]
+  0x7fa28c00 JavaThread "ApplicationImpl pooled thread 7" [_thread_blocked, id=23498, stack(0x7d0c9000,0x7d11a000)]
+  0x7fa2f800 JavaThread "ApplicationImpl pooled thread 6" [_thread_blocked, id=23497, stack(0x7d11a000,0x7d16b000)]
+  0x7e7c1400 JavaThread "ApplicationImpl pooled thread 5" daemon [_thread_blocked, id=23496, stack(0x7d16b000,0x7d1bc000)]
+  0x7e6cc000 JavaThread "Change List Updater" daemon [_thread_blocked, id=23495, stack(0x7d1bc000,0x7d20d000)]
+  0x7e6b5800 JavaThread "ApplicationImpl pooled thread 4" daemon [_thread_blocked, id=23494, stack(0x7d20d000,0x7d25e000)]
+  0x7f812000 JavaThread "Document commit thread" [_thread_blocked, id=23493, stack(0x7fdfa000,0x7fe4b000)]
+  0x7d411800 JavaThread "Animations" daemon [_thread_blocked, id=23492, stack(0x7d25e000,0x7d2af000)]
+  0x7d40f400 JavaThread "TimerQueue" daemon [_thread_blocked, id=23491, stack(0x7d2af000,0x7d300000)]
+  0x7d3acc00 JavaThread "Alarm pool(shared)" daemon [_thread_blocked, id=23490, stack(0x7da2d000,0x7da7e000)]
+  0x7d341800 JavaThread "FS Synchronizer" daemon [_thread_blocked, id=23487, stack(0x7dc29000,0x7dc7a000)]
+  0x7e2ec000 JavaThread "FocusManager timer" daemon [_thread_blocked, id=23486, stack(0x7e01d000,0x7e06e000)]
+  0x7e2ed800 JavaThread "Shared SimpleTimer" daemon [_thread_blocked, id=23485, stack(0x7e30a000,0x7e35b000)]
+  0x7e220400 JavaThread "Performance watcher" [_thread_blocked, id=23484, stack(0x7e5af000,0x7e600000)]
+  0x7e21f800 JavaThread "ApplicationImpl pooled thread 3" [_thread_in_native, id=23483, stack(0x7e93c000,0x7e98d000)]
+  0x7ee87c00 JavaThread "StoreRefreshStatusThread" daemon [_thread_blocked, id=23482, stack(0x7e98d000,0x7e9de000)]
+  0x7ee86c00 JavaThread "ApplicationImpl pooled thread 2" [_thread_blocked, id=23481, stack(0x7e9de000,0x7ea2f000)]
+  0x7ee84c00 JavaThread "ApplicationImpl pooled thread 1" [_thread_blocked, id=23480, stack(0x7ea2f000,0x7ea80000)]
+  0x7ee80800 JavaThread "ApplicationImpl pooled thread 0" [_thread_blocked, id=23479, stack(0x7ea80000,0x7ead1000)]
+  0x7ee7f000 JavaThread "process reaper" daemon [_thread_in_native, id=23477, stack(0x7ead1000,0x7eb22000)]
+  0x7ee8cc00 JavaThread "Flushing thread" daemon [_thread_blocked, id=23476, stack(0x7eb22000,0x7eb73000)]
+  0x7ed99800 JavaThread "timed reference disposer" daemon [_thread_blocked, id=23475, stack(0x7ff1a000,0x7ff6b000)]
+=>0x83a07000 JavaThread "AWT-EventQueue-2 6.3#RM-135.588, eap:false" [_thread_in_Java, id=23474, stack(0x7fec9000,0x7ff1a000)]
+  0xb30bc000 JavaThread "Periodic tasks thread" daemon [_thread_blocked, id=23473, stack(0x8035f000,0x803b0000)]
+  0x8016a800 JavaThread "AWT-Shutdown" [_thread_blocked, id=23471, stack(0x7ff6b000,0x7ffbc000)]
+  0x80166800 JavaThread "SocketListenerThread" [_thread_in_native, id=23470, stack(0x7ffbc000,0x8000d000)]
+  0x80165800 JavaThread "SocketListenerThread" [_thread_in_native, id=23469, stack(0x8000d000,0x8005e000)]
+  0x80164400 JavaThread "MessageDeliveryThread" [_thread_blocked, id=23468, stack(0x8005e000,0x800af000)]
+  0xb328a800 JavaThread "Lock thread" [_thread_in_native, id=23466, stack(0x802df000,0x80330000)]
+  0xb6507400 JavaThread "DestroyJavaVM" [_thread_blocked, id=23442, stack(0xb6685000,0xb66d6000)]
+  0x835e9c00 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=23459, stack(0x8309d000,0x830ee000)]
+  0x8357dc00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=23458, stack(0x831b3000,0x83204000)]
+  0x84020c00 JavaThread "timed reference disposer" daemon [_thread_blocked, id=23457, stack(0x841af000,0x84200000)]
+  0x84ad9000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=23455, stack(0x843d4000,0x84425000)]
+  0x84ad7000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=23454, stack(0x84425000,0x844a6000)]
+  0x84ad5400 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=23453, stack(0x844a6000,0x84527000)]
+  0x84ad3800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=23452, stack(0x84527000,0x84578000)]
+  0x84ad2000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=23451, stack(0x84578000,0x845c9000)]
+  0x84a95800 JavaThread "Finalizer" daemon [_thread_blocked, id=23450, stack(0x847c9000,0x8481a000)]
+  0x84a93c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=23449, stack(0x8481a000,0x8486b000)]
+
+Other Threads:
+  0x84a88800 VMThread [stack: 0x84d02000,0x84d83000] [id=23448]
+  0x84adb000 WatcherThread [stack: 0x84353000,0x843d4000] [id=23456]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ par new generation   total 39296K, used 26445K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,  63% used [0x86500000, 0x87a937c0, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 49495K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 67104K [0xa6500000, 0xabc4b000, 0xb2d00000)
+
+Card table byte_map: [0x8639b000,0x86500000] byte_map_base: 0x85f68800
+
+Polling page: 0xb7753000
+
+Code Cache  [0xb3500000, 0xb3b08000, 0xb6500000)
+ total_blobs=2774 nmethods=2458 adapters=267 free_code_cache=43064Kb largest_free_block=44018240
+
+Compilation events (10 events):
+Event: 167.295 Thread 0x84ad7000 nmethod 2694 0xb3ad4048 code [0xb3ad4140, 0xb3ad41bc]
+Event: 167.313 Thread 0x84ad7000 2695             com.intellij.openapi.editor.impl.EditorImpl$CachedFontContent::a (200 bytes)
+Event: 167.319 Thread 0x84ad5400 nmethod 2690 0xb3afb808 code [0xb3afbf40, 0xb3aff06c]
+Event: 167.326 Thread 0x84ad5400 2696             javax.swing.plaf.IconUIResource::getIconWidth (10 bytes)
+Event: 167.327 Thread 0x84ad5400 nmethod 2696 0xb3ada5c8 code [0xb3ada6e0, 0xb3ada7bc]
+Event: 167.339 Thread 0x84ad5400 2697             com.intellij.openapi.editor.impl.RangeHighlighterImpl::getAffectedAreaStartOffset (8 bytes)
+Event: 167.344 Thread 0x84ad5400 nmethod 2697 0xb3ae9ec8 code [0xb3aea000, 0xb3aea1b8]
+Event: 167.344 Thread 0x84ad5400 2698             com.intellij.openapi.editor.impl.RangeHighlighterData::getAffectedAreaStartOffset (60 bytes)
+Event: 167.349 Thread 0x84ad5400 nmethod 2698 0xb3ae7b88 code [0xb3ae7cc0, 0xb3ae7e78]
+Event: 167.367 Thread 0x84ad7000 nmethod 2695 0xb3af7e48 code [0xb3af8180, 0xb3af949c]
+
+GC Heap History (10 events):
+Event: 98.150 GC heap before
+{Heap before GC invocations=16 (full 1):
+ par new generation   total 39296K, used 39253K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,  99% used [0x86500000, 0x88715530, 0x88720000)
+  from space 4352K, 100% used [0x88720000, 0x88b60000, 0x88b60000)
+  to   space 4352K,   0% used [0x88b60000, 0x88b60000, 0x88fa0000)
+ concurrent mark-sweep generation total 87424K, used 41046K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 64542K [0xa6500000, 0xabc4b000, 0xb2d00000)
+Event: 98.172 GC heap after
+Heap after GC invocations=17 (full 1):
+ par new generation   total 39296K, used 4352K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,   0% used [0x86500000, 0x86500000, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 42856K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 64542K [0xa6500000, 0xabc4b000, 0xb2d00000)
+}
+Event: 122.855 GC heap before
+{Heap before GC invocations=17 (full 1):
+ par new generation   total 39296K, used 39296K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K, 100% used [0x86500000, 0x88720000, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 42856K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 65231K [0xa6500000, 0xabc4b000, 0xb2d00000)
+Event: 122.864 GC heap after
+Heap after GC invocations=18 (full 1):
+ par new generation   total 39296K, used 2668K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,   0% used [0x86500000, 0x86500000, 0x88720000)
+  from space 4352K,  61% used [0x88720000, 0x889bb1d0, 0x88b60000)
+  to   space 4352K,   0% used [0x88b60000, 0x88b60000, 0x88fa0000)
+ concurrent mark-sweep generation total 87424K, used 42856K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 65231K [0xa6500000, 0xabc4b000, 0xb2d00000)
+}
+Event: 123.597 GC heap before
+{Heap before GC invocations=18 (full 1):
+ par new generation   total 39296K, used 37612K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K, 100% used [0x86500000, 0x88720000, 0x88720000)
+  from space 4352K,  61% used [0x88720000, 0x889bb1d0, 0x88b60000)
+  to   space 4352K,   0% used [0x88b60000, 0x88b60000, 0x88fa0000)
+ concurrent mark-sweep generation total 87424K, used 42856K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 65602K [0xa6500000, 0xabc4b000, 0xb2d00000)
+Event: 123.613 GC heap after
+Heap after GC invocations=19 (full 1):
+ par new generation   total 39296K, used 4352K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,   0% used [0x86500000, 0x86500000, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 44803K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 65602K [0xa6500000, 0xabc4b000, 0xb2d00000)
+}
+Event: 147.147 GC heap before
+{Heap before GC invocations=19 (full 1):
+ par new generation   total 39296K, used 37451K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,  94% used [0x86500000, 0x88552c08, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 44803K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 66207K [0xa6500000, 0xabc4b000, 0xb2d00000)
+Event: 147.169 GC heap after
+Heap after GC invocations=20 (full 1):
+ par new generation   total 39296K, used 3407K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,   0% used [0x86500000, 0x86500000, 0x88720000)
+  from space 4352K,  78% used [0x88720000, 0x88a73de8, 0x88b60000)
+  to   space 4352K,   0% used [0x88b60000, 0x88b60000, 0x88fa0000)
+ concurrent mark-sweep generation total 87424K, used 48926K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 66207K [0xa6500000, 0xabc4b000, 0xb2d00000)
+}
+Event: 159.086 GC heap before
+{Heap before GC invocations=20 (full 1):
+ par new generation   total 39296K, used 38351K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K, 100% used [0x86500000, 0x88720000, 0x88720000)
+  from space 4352K,  78% used [0x88720000, 0x88a73de8, 0x88b60000)
+  to   space 4352K,   0% used [0x88b60000, 0x88b60000, 0x88fa0000)
+ concurrent mark-sweep generation total 87424K, used 48926K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 67000K [0xa6500000, 0xabc4b000, 0xb2d00000)
+Event: 159.099 GC heap after
+Heap after GC invocations=21 (full 1):
+ par new generation   total 39296K, used 4352K [0x86500000, 0x88fa0000, 0x90fa0000)
+  eden space 34944K,   0% used [0x86500000, 0x86500000, 0x88720000)
+  from space 4352K, 100% used [0x88b60000, 0x88fa0000, 0x88fa0000)
+  to   space 4352K,   0% used [0x88720000, 0x88720000, 0x88b60000)
+ concurrent mark-sweep generation total 87424K, used 49495K [0x90fa0000, 0x96500000, 0xa6500000)
+ concurrent-mark-sweep perm gen total 89388K, used 67000K [0xa6500000, 0xabc4b000, 0xb2d00000)
+}
+
+Deoptimization events (10 events):
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb38f730c
+Event: 160.367 Thread 0x83a07000 Uncommon trap -34 fr.pc 0xb3a9b19c
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb3783c80
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb38f730c
+Event: 160.367 Thread 0x83a07000 Uncommon trap -34 fr.pc 0xb3a9b19c
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb3783c80
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb38f730c
+Event: 160.367 Thread 0x83a07000 Uncommon trap -34 fr.pc 0xb3a9c0b4
+Event: 160.367 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb3783c80
+Event: 160.368 Thread 0x83a07000 Uncommon trap -58 fr.pc 0xb38f730c
+
+Internal exceptions (10 events):
+Event: 159.311 Thread 0x7c5ddc00 Threw 0x86b2d028 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.360 Thread 0x83a07000 Threw 0x86bbc188 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.361 Thread 0x83a07000 Threw 0x86bbd778 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.363 Thread 0x83a07000 Threw 0x86bbec78 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.365 Thread 0x83a07000 Threw 0x86bc01b8 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.386 Thread 0x7c5ddc00 Threw 0x86b424b0 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 160.387 Thread 0x7c5ddc00 Threw 0x86b43d80 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp:179
+Event: 162.146 Thread 0x80165800 Threw 0x86dc3568 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 162.159 Thread 0x80166800 Threw 0x86e10d80 at /build/buildd/openjdk-6-6b30-1.13.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 167.435 Thread 0x83a07000 Implicit null exception at 0xb3aece48 to 0x00000000
+
+Events (10 events):
+Event: 160.387 loading class 0x0a3e6498
+Event: 160.387 loading class 0x0a3e6498 done
+Event: 160.387 Executing VM operation: Deoptimize
+Event: 160.388 Executing VM operation: Deoptimize done
+Event: 161.214 Executing VM operation: RevokeBias
+Event: 161.216 Executing VM operation: RevokeBias done
+Event: 167.344 Thread 0x84ad5400 flushing nmethod 0xb36d04c8
+Event: 167.344 Thread 0x84ad5400 flushing nmethod 0xb36e2708
+Event: 167.344 Thread 0x84ad5400 flushing nmethod 0xb36fb148
+Event: 167.367 Thread 0x84ad7000 flushing nmethod 0xb37518c8
+
+
+Dynamic libraries:
+08048000-08051000 r-xp 00000000 08:08 10863      /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08051000-08052000 r--p 00008000 08:08 10863      /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08052000-08053000 rw-p 00009000 08:08 10863      /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+09fc8000-0a504000 rw-p 00000000 00:00 0          [heap]
+7ae00000-7aefd000 rw-p 00000000 00:00 0 
+7aefd000-7af00000 ---p 00000000 00:00 0 
+7af00000-7af77000 rw-p 00000000 00:00 0 
+7af77000-7b000000 ---p 00000000 00:00 0 
+7b000000-7b1f8000 rw-p 00000000 00:00 0 
+7b1f8000-7b200000 ---p 00000000 00:00 0 
+7b200000-7b300000 rw-p 00000000 00:00 0 
+7b300000-7b3fa000 rw-p 00000000 00:00 0 
+7b3fa000-7b400000 ---p 00000000 00:00 0 
+7b500000-7b5f0000 rw-p 00000000 00:00 0 
+7b5f0000-7b600000 ---p 00000000 00:00 0 
+7b700000-7b8ff000 rw-p 00000000 00:00 0 
+7b8ff000-7b900000 ---p 00000000 00:00 0 
+7b900000-7b9ff000 rw-p 00000000 00:00 0 
+7b9ff000-7ba00000 ---p 00000000 00:00 0 
+7ba00000-7bb00000 rw-p 00000000 00:00 0 
+7bc00000-7bd00000 rw-p 00000000 00:00 0 
+7bd00000-7bdfe000 rw-p 00000000 00:00 0 
+7bdfe000-7be00000 ---p 00000000 00:00 0 
+7be00000-7beb0000 rw-p 00000000 00:00 0 
+7beb0000-7bf00000 ---p 00000000 00:00 0 
+7bf00000-7bf47000 rw-p 00000000 00:00 0 
+7bf47000-7c000000 ---p 00000000 00:00 0 
+7c000000-7c100000 rw-p 00000000 00:00 0 
+7c200000-7c2f0000 rw-p 00000000 00:00 0 
+7c2f0000-7c300000 ---p 00000000 00:00 0 
+7c30d000-7c310000 ---p 00000000 00:00 0 
+7c310000-7c35e000 rw-p 00000000 00:00 0 
+7c35e000-7c361000 ---p 00000000 00:00 0 
+7c361000-7c3af000 rw-p 00000000 00:00 0 
+7c3af000-7c3b2000 ---p 00000000 00:00 0 
+7c3b2000-7c400000 rw-p 00000000 00:00 0          [stack:23575]
+7c400000-7c4fa000 rw-p 00000000 00:00 0 
+7c4fa000-7c500000 ---p 00000000 00:00 0 
+7c500000-7c600000 rw-p 00000000 00:00 0 
+7c600000-7c6ec000 rw-p 00000000 00:00 0 
+7c6ec000-7c700000 ---p 00000000 00:00 0 
+7c70d000-7c710000 ---p 00000000 00:00 0 
+7c710000-7c75e000 rw-p 00000000 00:00 0 
+7c75e000-7c761000 ---p 00000000 00:00 0 
+7c761000-7c7af000 rw-p 00000000 00:00 0          [stack:23582]
+7c7af000-7c7b2000 ---p 00000000 00:00 0 
+7c7b2000-7c800000 rw-p 00000000 00:00 0          [stack:23538]
+7c800000-7c8c8000 rw-p 00000000 00:00 0 
+7c8c8000-7c900000 ---p 00000000 00:00 0 
+7c94e000-7cd00000 rw-s 00000000 00:04 53116930   /SYSV00000000 (deleted)
+7cd00000-7ce00000 rw-p 00000000 00:00 0 
+7ce41000-7ce44000 ---p 00000000 00:00 0 
+7ce44000-7ce92000 rw-p 00000000 00:00 0          [stack:23537]
+7ce92000-7ce95000 ---p 00000000 00:00 0 
+7ce95000-7cee3000 rw-p 00000000 00:00 0          [stack:23536]
+7cee3000-7cee6000 ---p 00000000 00:00 0 
+7cee6000-7cf34000 rw-p 00000000 00:00 0          [stack:23544]
+7cf34000-7cf37000 ---p 00000000 00:00 0 
+7cf37000-7cf85000 rw-p 00000000 00:00 0          [stack:23531]
+7cf85000-7cf88000 ---p 00000000 00:00 0 
+7cf88000-7cfd6000 rw-p 00000000 00:00 0          [stack:23548]
+7cfd6000-7cfd9000 ---p 00000000 00:00 0 
+7cfd9000-7d027000 rw-p 00000000 00:00 0          [stack:23503]
+7d027000-7d02a000 ---p 00000000 00:00 0 
+7d02a000-7d078000 rw-p 00000000 00:00 0          [stack:23501]
+7d078000-7d07b000 ---p 00000000 00:00 0 
+7d07b000-7d0c9000 rw-p 00000000 00:00 0          [stack:23502]
+7d0c9000-7d0cc000 ---p 00000000 00:00 0 
+7d0cc000-7d11a000 rw-p 00000000 00:00 0          [stack:23498]
+7d11a000-7d11d000 ---p 00000000 00:00 0 
+7d11d000-7d16b000 rw-p 00000000 00:00 0          [stack:23497]
+7d16b000-7d16e000 ---p 00000000 00:00 0 
+7d16e000-7d1bc000 rw-p 00000000 00:00 0          [stack:23496]
+7d1bc000-7d1bf000 ---p 00000000 00:00 0 
+7d1bf000-7d20d000 rw-p 00000000 00:00 0          [stack:23495]
+7d20d000-7d210000 ---p 00000000 00:00 0 
+7d210000-7d25e000 rw-p 00000000 00:00 0          [stack:23494]
+7d25e000-7d261000 ---p 00000000 00:00 0 
+7d261000-7d2af000 rw-p 00000000 00:00 0          [stack:23492]
+7d2af000-7d2b2000 ---p 00000000 00:00 0 
+7d2b2000-7d300000 rw-p 00000000 00:00 0          [stack:23491]
+7d300000-7d4e0000 rw-p 00000000 00:00 0 
+7d4e0000-7d500000 ---p 00000000 00:00 0 
+7d500000-7d5fd000 rw-p 00000000 00:00 0 
+7d5fd000-7d600000 ---p 00000000 00:00 0 
+7d600000-7d6fe000 rw-p 00000000 00:00 0 
+7d6fe000-7d700000 ---p 00000000 00:00 0 
+7d700000-7d7fd000 rw-p 00000000 00:00 0 
+7d7fd000-7d800000 ---p 00000000 00:00 0 
+7d800000-7d8ff000 rw-p 00000000 00:00 0 
+7d8ff000-7d900000 ---p 00000000 00:00 0 
+7d900000-7da00000 rw-p 00000000 00:00 0 
+7da2d000-7da30000 ---p 00000000 00:00 0 
+7da30000-7db00000 rw-p 00000000 00:00 0          [stack:23490]
+7db00000-7dbb5000 rw-p 00000000 00:00 0 
+7dbb5000-7dc00000 ---p 00000000 00:00 0 
+7dc29000-7dc2c000 ---p 00000000 00:00 0 
+7dc2c000-7df00000 rw-p 00000000 00:00 0          [stack:23487]
+7df00000-7e000000 rw-p 00000000 00:00 0 
+7e01d000-7e020000 ---p 00000000 00:00 0 
+7e020000-7e06e000 rw-p 00000000 00:00 0          [stack:23486]
+7e06e000-7e0cc000 r-xp 00000000 08:08 132718     /usr/lib/i386-linux-gnu/nss/libfreebl3.so
+7e0cc000-7e0cd000 r--p 0005d000 08:08 132718     /usr/lib/i386-linux-gnu/nss/libfreebl3.so
+7e0cd000-7e0ce000 rw-p 0005e000 08:08 132718     /usr/lib/i386-linux-gnu/nss/libfreebl3.so
+7e0ce000-7e0d2000 rw-p 00000000 00:00 0 
+7e0d2000-7e1fb000 r-xp 00000000 08:08 2121       /usr/lib/i386-linux-gnu/libnss3.so
+7e1fb000-7e1fe000 r--p 00128000 08:08 2121       /usr/lib/i386-linux-gnu/libnss3.so
+7e1fe000-7e200000 rw-p 0012b000 08:08 2121       /usr/lib/i386-linux-gnu/libnss3.so
+7e200000-7e300000 rw-p 00000000 00:00 0 
+7e30a000-7e30d000 ---p 00000000 00:00 0 
+7e30d000-7e35b000 rw-p 00000000 00:00 0          [stack:23485]
+7e35b000-7e3fd000 r-xp 00000000 08:08 927        /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+7e3fd000-7e3fe000 r--p 000a2000 08:08 927        /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+7e3fe000-7e3ff000 rw-p 000a3000 08:08 927        /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+7e3ff000-7e400000 rw-p 00000000 00:00 0 
+7e400000-7e500000 rw-p 00000000 00:00 0 
+7e530000-7e56f000 r-xp 00000000 08:08 132722     /usr/lib/i386-linux-gnu/nss/libsoftokn3.so
+7e56f000-7e570000 r--p 0003e000 08:08 132722     /usr/lib/i386-linux-gnu/nss/libsoftokn3.so
+7e570000-7e571000 rw-p 0003f000 08:08 132722     /usr/lib/i386-linux-gnu/nss/libsoftokn3.so
+7e571000-7e5ab000 r-xp 00000000 08:08 94047      /usr/lib/i386-linux-gnu/libnspr4.so
+7e5ab000-7e5ac000 r--p 0003a000 08:08 94047      /usr/lib/i386-linux-gnu/libnspr4.so
+7e5ac000-7e5ad000 rw-p 0003b000 08:08 94047      /usr/lib/i386-linux-gnu/libnspr4.so
+7e5ad000-7e5af000 rw-p 00000000 00:00 0 
+7e5af000-7e5b2000 ---p 00000000 00:00 0 
+7e5b2000-7e600000 rw-p 00000000 00:00 0          [stack:23484]
+7e600000-7e6fb000 rw-p 00000000 00:00 0 
+7e6fb000-7e700000 ---p 00000000 00:00 0 
+7e700000-7e7ff000 rw-p 00000000 00:00 0 
+7e7ff000-7e800000 ---p 00000000 00:00 0 
+7e800000-7e900000 rw-p 00000000 00:00 0 
+7e904000-7e923000 r-xp 00000000 08:08 2071       /usr/lib/i386-linux-gnu/libnssutil3.so
+7e923000-7e926000 r--p 0001f000 08:08 2071       /usr/lib/i386-linux-gnu/libnssutil3.so
+7e926000-7e927000 rw-p 00022000 08:08 2071       /usr/lib/i386-linux-gnu/libnssutil3.so
+7e931000-7e936000 r-xp 00000000 08:08 342738     /lib/i386-linux-gnu/libnss_dns-2.15.so
+7e936000-7e937000 r--p 00004000 08:08 342738     /lib/i386-linux-gnu/libnss_dns-2.15.so
+7e937000-7e938000 rw-p 00005000 08:08 342738     /lib/i386-linux-gnu/libnss_dns-2.15.so
+7e938000-7e93c000 r--s 00039000 08:08 783213     /home/dima/Downloads/RubyMine-6.3/plugins/htmltools/lib/htmltools.jar
+7e93c000-7e93f000 ---p 00000000 00:00 0 
+7e93f000-7e98d000 rw-p 00000000 00:00 0          [stack:23483]
+7e98d000-7e990000 ---p 00000000 00:00 0 
+7e990000-7e9de000 rw-p 00000000 00:00 0          [stack:23482]
+7e9de000-7e9e1000 ---p 00000000 00:00 0 
+7e9e1000-7ea2f000 rw-p 00000000 00:00 0          [stack:23481]
+7ea2f000-7ea32000 ---p 00000000 00:00 0 
+7ea32000-7ea80000 rw-p 00000000 00:00 0          [stack:23480]
+7ea80000-7ea83000 ---p 00000000 00:00 0 
+7ea83000-7ead1000 rw-p 00000000 00:00 0          [stack:23479]
+7ead1000-7ead4000 ---p 00000000 00:00 0 
+7ead4000-7eb22000 rw-p 00000000 00:00 0          [stack:23477]
+7eb22000-7eb25000 ---p 00000000 00:00 0 
+7eb25000-7ed00000 rw-p 00000000 00:00 0          [stack:23476]
+7ed00000-7eef3000 rw-p 00000000 00:00 0 
+7eef3000-7ef00000 ---p 00000000 00:00 0 
+7ef00000-7effa000 rw-p 00000000 00:00 0 
+7effa000-7f000000 ---p 00000000 00:00 0 
+7f000000-7f0fc000 rw-p 00000000 00:00 0 
+7f0fc000-7f100000 ---p 00000000 00:00 0 
+7f100000-7f111000 r-xp 00000000 08:08 10894      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libj2pkcs11.so
+7f111000-7f112000 r--p 00010000 08:08 10894      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libj2pkcs11.so
+7f112000-7f113000 rw-p 00011000 08:08 10894      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libj2pkcs11.so
+7f113000-7f11a000 r--s 000c9000 08:08 783145     /home/dima/Downloads/RubyMine-6.3/plugins/IntelliLang/lib/IntelliLang.jar
+7f11a000-7f11e000 r--s 0004d000 08:08 783235     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-cucumber/lib/ruby-cucumber.jar
+7f11e000-7f11f000 r--s 00000000 08:08 783234     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-cucumber/lib/resources_en.jar
+7f11f000-7f13a000 r--s 001d4000 08:08 783154     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptDebugger/lib/ChromeConnector.jar
+7f13a000-7f149000 r--s 0014b000 08:08 783156     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptDebugger/lib/JavaScriptDebugger.jar
+7f149000-7f14a000 r--s 00001000 08:08 783157     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptDebugger/lib/resources_en.jar
+7f14a000-7f14e000 r--s 0003d000 08:08 783155     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptDebugger/lib/FirefoxConnector.jar
+7f14e000-7f157000 r--s 00061000 08:08 783351     /home/dima/Downloads/RubyMine-6.3/plugins/webDeployment/lib/commons-vfs2-2.1-SNAPSHOT.jar
+7f157000-7f158000 r--s 00008000 08:08 783352     /home/dima/Downloads/RubyMine-6.3/plugins/webDeployment/lib/resources_en.jar
+7f158000-7f16d000 r--s 0027a000 08:08 783353     /home/dima/Downloads/RubyMine-6.3/plugins/webDeployment/lib/webDeployment.jar
+7f16d000-7f173000 r--s 000aa000 08:08 783202     /home/dima/Downloads/RubyMine-6.3/plugins/github/lib/github.jar
+7f173000-7f175000 r--s 00012000 08:08 783318     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/tasks-api.jar
+7f175000-7f177000 r--s 00006000 08:08 783312     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/axis-jaxrpc-1.4.jar
+7f177000-7f182000 r--s 00146000 08:08 783319     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/tasks-core.jar
+7f182000-7f183000 r--s 00004000 08:08 783313     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/axis-saaj-1.3.jar
+7f183000-7f188000 r--s 00046000 08:08 783315     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/jira.jar
+7f188000-7f18c000 r--s 00018000 08:08 783320     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/wsdl4j-1.4.jar
+7f18c000-7f18e000 r--s 0000b000 08:08 783317     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/json-smart-1.1.1.jar
+7f18e000-7f190000 r--s 0000c000 08:08 783316     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/json-path-0.8.0.jar
+7f190000-7f193000 r--s 00010000 08:08 783314     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/commons-discovery-0.4.jar
+7f193000-7f1a7000 r--s 00173000 08:08 783311     /home/dima/Downloads/RubyMine-6.3/plugins/tasks/lib/axis-1.4.jar
+7f1a7000-7f1ab000 r--s 00047000 08:08 783169     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptLanguage/lib/js-test-common.jar
+7f1ab000-7f1ac000 r--s 0003d000 08:08 783167     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptLanguage/lib/ecmascript6-compiler.jar
+7f1ac000-7f200000 r--s 00c04000 08:08 783166     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
+7f200000-7f2eb000 rw-p 00000000 00:00 0 
+7f2eb000-7f300000 ---p 00000000 00:00 0 
+7f301000-7f304000 r-xp 00000000 08:08 94046      /usr/lib/i386-linux-gnu/libplds4.so
+7f304000-7f305000 r--p 00002000 08:08 94046      /usr/lib/i386-linux-gnu/libplds4.so
+7f305000-7f306000 rw-p 00003000 08:08 94046      /usr/lib/i386-linux-gnu/libplds4.so
+7f306000-7f30a000 r-xp 00000000 08:08 94048      /usr/lib/i386-linux-gnu/libplc4.so
+7f30a000-7f30b000 r--p 00003000 08:08 94048      /usr/lib/i386-linux-gnu/libplc4.so
+7f30b000-7f30c000 rw-p 00004000 08:08 94048      /usr/lib/i386-linux-gnu/libplc4.so
+7f30c000-7f30d000 r--s 00001000 08:08 783183     /home/dima/Downloads/RubyMine-6.3/plugins/cucumber/lib/resources_en.jar
+7f30d000-7f313000 r--s 00078000 08:08 783182     /home/dima/Downloads/RubyMine-6.3/plugins/cucumber/lib/cucumber.jar
+7f313000-7f31a000 r--s 0019f000 08:08 783178     /home/dima/Downloads/RubyMine-6.3/plugins/coffeescript/lib/coffeescript.jar
+7f31a000-7f31b000 r--s 00001000 08:08 783179     /home/dima/Downloads/RubyMine-6.3/plugins/coffeescript/lib/resources_en.jar
+7f31b000-7f31f000 r--s 00037000 08:08 783275     /home/dima/Downloads/RubyMine-6.3/plugins/stylus/lib/stylus.jar
+7f31f000-7f320000 r--s 00000000 08:08 783274     /home/dima/Downloads/RubyMine-6.3/plugins/stylus/lib/resources_en.jar
+7f320000-7f323000 r--s 0002b000 08:08 783267     /home/dima/Downloads/RubyMine-6.3/plugins/slim-lang/lib/slim-lang.jar
+7f323000-7f324000 r--s 00000000 08:08 783266     /home/dima/Downloads/RubyMine-6.3/plugins/slim-lang/lib/resources_en.jar
+7f324000-7f344000 r--s 00162000 08:08 783259     /home/dima/Downloads/RubyMine-6.3/plugins/sass/lib/jrubyparser-0.5.0.jar
+7f344000-7f34f000 r--s 0029b000 08:08 783261     /home/dima/Downloads/RubyMine-6.3/plugins/sass/lib/sass.jar
+7f34f000-7f354000 r--s 00029000 08:08 783170     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptLanguage/lib/resources_en.jar
+7f354000-7f35a000 r--s 00028000 08:08 783168     /home/dima/Downloads/RubyMine-6.3/plugins/JavaScriptLanguage/lib/javascript-openapi.jar
+7f35a000-7f35d000 r--s 00026000 08:08 671258     /home/dima/Downloads/RubyMine-6.3/plugins/CSS/lib/css-openapi.jar
+7f35d000-7f372000 r--s 00412000 08:08 783135     /home/dima/Downloads/RubyMine-6.3/plugins/CSS/lib/css.jar
+7f372000-7f375000 r--s 00008000 08:08 783136     /home/dima/Downloads/RubyMine-6.3/plugins/CSS/lib/resources_en.jar
+7f375000-7f37d000 r--s 00108000 08:08 783209     /home/dima/Downloads/RubyMine-6.3/plugins/hg4idea/lib/hg4idea.jar
+7f37d000-7f37e000 r--s 00002000 08:08 783210     /home/dima/Downloads/RubyMine-6.3/plugins/hg4idea/lib/resources_en.jar
+7f37e000-7f39a000 r--s 00930000 08:08 783271     /home/dima/Downloads/RubyMine-6.3/plugins/sql/lib/sql.jar
+7f39a000-7f39d000 r--s 000ca000 08:08 783270     /home/dima/Downloads/RubyMine-6.3/plugins/sql/lib/resources_en.jar
+7f39d000-7f3a8000 r--s 0007e000 08:08 783140     /home/dima/Downloads/RubyMine-6.3/plugins/DatabaseSupport/lib/database-openapi.jar
+7f3a8000-7f3c3000 r--s 003b6000 08:08 783139     /home/dima/Downloads/RubyMine-6.3/plugins/DatabaseSupport/lib/database-impl.jar
+7f3c3000-7f3c5000 r--s 00033000 08:08 783141     /home/dima/Downloads/RubyMine-6.3/plugins/DatabaseSupport/lib/jdbc-console.jar
+7f3c5000-7f3c8000 r--s 0022a000 08:08 783142     /home/dima/Downloads/RubyMine-6.3/plugins/DatabaseSupport/lib/resources_en.jar
+7f3c8000-7f3cd000 r--s 0005b000 08:08 783342     /home/dima/Downloads/RubyMine-6.3/plugins/uml/lib/diagram-api.jar
+7f3cd000-7f3d4000 r--s 000bf000 08:08 783343     /home/dima/Downloads/RubyMine-6.3/plugins/uml/lib/uml-support.jar
+7f3d4000-7f400000 r--s 0030e000 08:08 783306     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/svnkit.jar
+7f400000-7f4f1000 rw-p 00000000 00:00 0 
+7f4f1000-7f500000 ---p 00000000 00:00 0 
+7f500000-7f5ec000 rw-p 00000000 00:00 0 
+7f5ec000-7f600000 ---p 00000000 00:00 0 
+7f600000-7f7fb000 rw-p 00000000 00:00 0 
+7f7fb000-7f800000 ---p 00000000 00:00 0 
+7f800000-7f8f6000 rw-p 00000000 00:00 0 
+7f8f6000-7f900000 ---p 00000000 00:00 0 
+7f900000-7fa00000 rw-p 00000000 00:00 0 
+7fa00000-7faf9000 rw-p 00000000 00:00 0 
+7faf9000-7fb00000 ---p 00000000 00:00 0 
+7fb00000-7fbf9000 rw-p 00000000 00:00 0 
+7fbf9000-7fc00000 ---p 00000000 00:00 0 
+7fc00000-7fcf4000 rw-p 00000000 00:00 0 
+7fcf4000-7fd00000 ---p 00000000 00:00 0 
+7fd01000-7fd03000 r--s 0001b000 08:08 783247     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-remote-interpreter/lib/ruby-remote-interpreter.jar
+7fd03000-7fd05000 r--s 00013000 08:08 7267       /usr/lib/jvm/java-6-openjdk-common/jre/lib/jce.jar
+7fd05000-7fd06000 r--s 0000d000 08:08 783250     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-slim/lib/ruby-slim.jar
+7fd06000-7fd0c000 r--s 0007b000 08:08 783216     /home/dima/Downloads/RubyMine-6.3/plugins/less/lib/less.jar
+7fd0c000-7fd11000 r--s 00053000 08:08 783220     /home/dima/Downloads/RubyMine-6.3/plugins/puppet/lib/puppet.jar
+7fd11000-7fd1c000 r--s 00071000 08:08 783308     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/trileadsrc.zip
+7fd1c000-7fd22000 r--s 00024000 08:08 783296     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/javahl.jar
+7fd22000-7fd4a000 r--s 0049a000 08:08 783303     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/svn4idea.jar
+7fd4a000-7fd52000 r--s 00068000 08:08 783302     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/sqljetsrc.zip
+7fd52000-7fd56000 r--s 00025000 08:08 783294     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/antlr.jar
+7fd56000-7fd5a000 r--s 00030000 08:08 783297     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/javahlsrc.zip
+7fd5a000-7fd5b000 r--s 00000000 08:08 783298     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/jsch.agentproxy.svnkit-trilead-ssh2.jar
+7fd5b000-7fd5e000 r--s 0000f000 08:08 783300     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/sequence-library.jar
+7fd5e000-7fd61000 r--s 00026000 08:08 783305     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/svnkit-javahl16.zip
+7fd61000-7fd68000 r--s 0004a000 08:08 783304     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/svnkit-javahl.jar
+7fd68000-7fd69000 r--s 0000a000 08:08 783299     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/resources_en.jar
+7fd69000-7fd79000 r--s 000aa000 08:08 783301     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/sqljet.jar
+7fd79000-7fd7e000 r--s 00039000 08:08 783307     /home/dima/Downloads/RubyMine-6.3/plugins/svn4idea/lib/trilead.jar
+7fd7e000-7fd82000 r--s 0003a000 08:08 783199     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/trilead-ssh2.jar
+7fd82000-7fd85000 r--s 00017000 08:08 783196     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/ini4j-0.5.2-patched.jar
+7fd85000-7fda0000 r--s 00171000 08:08 783197     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/org.eclipse.jgit-2.1.0.201209190230-r.jar
+7fda0000-7fdbb000 r--s 00387000 08:08 783195     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/git4idea.jar
+7fdbb000-7fdbe000 r--s 0002a000 08:08 783187     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/cvs_util.jar
+7fdbe000-7fdc5000 r--s 00081000 08:08 783188     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/javacvs-src.jar
+7fdc5000-7fdd9000 r--s 001ed000 08:08 783186     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/cvsIntegration.jar
+7fddc000-7fdde000 r-xp 00000000 08:08 277225     /lib/libnss_mdns4_minimal.so.2
+7fdde000-7fddf000 r--p 00001000 08:08 277225     /lib/libnss_mdns4_minimal.so.2
+7fddf000-7fde0000 rw-p 00002000 08:08 277225     /lib/libnss_mdns4_minimal.so.2
+7fde5000-7fde6000 r--s 00001000 08:08 783244     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-javascript-debugger/lib/ruby-javascript-debugger.jar
+7fde6000-7fded000 r--s 0007f000 08:08 783148     /home/dima/Downloads/RubyMine-6.3/plugins/JSIntentionPowerPack/lib/JSIntentionPowerPack.jar
+7fded000-7fdf4000 r--s 0000b000 08:08 783149     /home/dima/Downloads/RubyMine-6.3/plugins/JSIntentionPowerPack/lib/resources_en.jar
+7fdf4000-7fdf5000 r--s 00006000 08:08 783238     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-db-config/lib/ruby-db-config.jar
+7fdf5000-7fdf7000 r--s 00011000 08:08 783231     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-css/lib/ruby-css.jar
+7fdf7000-7fdfa000 r--s 00049000 08:08 783253     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-uml/lib/ruby-uml.jar
+7fdfa000-7fdfd000 ---p 00000000 00:00 0 
+7fdfd000-7fe4b000 rw-p 00000000 00:00 0          [stack:23493]
+7fe4b000-7fe4c000 r--s 00000000 08:08 783227     /home/dima/Downloads/RubyMine-6.3/plugins/restClient/lib/resources_en.jar
+7fe4c000-7fe4f000 r--s 00032000 08:08 783228     /home/dima/Downloads/RubyMine-6.3/plugins/restClient/lib/restClient.jar
+7fe4f000-7fe94000 r-xp 00000000 08:08 5397       /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+7fe94000-7fe95000 r--p 00044000 08:08 5397       /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+7fe95000-7fe96000 rw-p 00045000 08:08 5397       /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+7fe96000-7fea6000 rw-p 00000000 00:00 0 
+7fea6000-7febb000 r--s 000ef000 08:08 783346     /home/dima/Downloads/RubyMine-6.3/plugins/vagrant/lib/jrubyparser-0.2.jar
+7febb000-7fec5000 r-xp 00000000 08:08 10946      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libsplashscreen.so
+7fec5000-7fec6000 r--p 00009000 08:08 10946      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libsplashscreen.so
+7fec6000-7fec7000 rw-p 0000a000 08:08 10946      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libsplashscreen.so
+7fec7000-7fec9000 rw-p 00000000 00:00 0 
+7fec9000-7fecc000 ---p 00000000 00:00 0 
+7fecc000-7ff1a000 rw-p 00000000 00:00 0          [stack:23474]
+7ff1a000-7ff1d000 ---p 00000000 00:00 0 
+7ff1d000-7ff6b000 rw-p 00000000 00:00 0          [stack:23475]
+7ff6b000-7ff6e000 ---p 00000000 00:00 0 
+7ff6e000-7ffbc000 rw-p 00000000 00:00 0          [stack:23471]
+7ffbc000-7ffbf000 ---p 00000000 00:00 0 
+7ffbf000-8000d000 rw-p 00000000 00:00 0          [stack:23470]
+8000d000-80010000 ---p 00000000 00:00 0 
+80010000-8005e000 rw-p 00000000 00:00 0          [stack:23469]
+8005e000-80061000 ---p 00000000 00:00 0 
+80061000-800af000 rw-p 00000000 00:00 0          [stack:23468]
+800af000-800b2000 ---p 00000000 00:00 0 
+800b2000-80100000 rw-p 00000000 00:00 0          [stack:23580]
+80100000-801fe000 rw-p 00000000 00:00 0 
+801fe000-80200000 ---p 00000000 00:00 0 
+80200000-80203000 r--s 00025000 08:08 783205     /home/dima/Downloads/RubyMine-6.3/plugins/haml/lib/haml.jar
+80203000-80204000 r--s 00000000 08:08 783347     /home/dima/Downloads/RubyMine-6.3/plugins/vagrant/lib/resources_en.jar
+80204000-80207000 r--s 00040000 08:08 783348     /home/dima/Downloads/RubyMine-6.3/plugins/vagrant/lib/vagrant.jar
+80207000-80208000 r--s 00000000 08:08 783256     /home/dima/Downloads/RubyMine-6.3/plugins/rubymine-coverage/lib/rubymine-coverage.jar
+80208000-8020c000 r--s 0006a000 08:08 783328     /home/dima/Downloads/RubyMine-6.3/plugins/textmate/lib/textmate.jar
+8020c000-80212000 r--s 00076000 08:08 783224     /home/dima/Downloads/RubyMine-6.3/plugins/remote-run/lib/remote-run.jar
+80212000-802d4000 r-xp 00000000 08:08 773901     /home/dima/.RubyMine60/system/tmp/snappy-1.0.5-libsnappyjava.so
+802d4000-802d9000 rw-p 000c2000 08:08 773901     /home/dima/.RubyMine60/system/tmp/snappy-1.0.5-libsnappyjava.so
+802d9000-802df000 rw-p 00000000 00:00 0 
+802df000-802e2000 ---p 00000000 00:00 0 
+802e2000-80330000 rw-p 00000000 00:00 0          [stack:23466]
+80330000-8035f000 r--s 002ab000 08:08 782083     /home/dima/Downloads/RubyMine-6.3/lib/icons.jar
+8035f000-80362000 ---p 00000000 00:00 0 
+80362000-803b0000 rw-p 00000000 00:00 0          [stack:23473]
+803b0000-803b1000 ---p 00000000 00:00 0 
+803b1000-80bb1000 rw-p 00000000 00:00 0 
+80bb1000-80bcb000 r-xp 00000000 08:08 36082      /usr/lib/i386-linux-gnu/libdbusmenu-glib.so.4.0.13
+80bcb000-80bcc000 r--p 00019000 08:08 36082      /usr/lib/i386-linux-gnu/libdbusmenu-glib.so.4.0.13
+80bcc000-80bcd000 rw-p 0001a000 08:08 36082      /usr/lib/i386-linux-gnu/libdbusmenu-glib.so.4.0.13
+80bcd000-80bde000 r-xp 00000000 08:08 36074      /usr/lib/i386-linux-gnu/libdbusmenu-gtk.so.4.0.13
+80bde000-80bdf000 r--p 00010000 08:08 36074      /usr/lib/i386-linux-gnu/libdbusmenu-gtk.so.4.0.13
+80bdf000-80be0000 rw-p 00011000 08:08 36074      /usr/lib/i386-linux-gnu/libdbusmenu-gtk.so.4.0.13
+80be0000-80bf4000 r-xp 00000000 08:08 732451     /home/dima/.RubyMine60/system/tmp/jna/jna7935499938546441650.tmp (deleted)
+80bf4000-80bf5000 rw-p 00013000 08:08 732451     /home/dima/.RubyMine60/system/tmp/jna/jna7935499938546441650.tmp (deleted)
+80bf5000-80c03000 r-xp 00000000 08:08 264685     /lib/i386-linux-gnu/libudev.so.0.13.0
+80c03000-80c04000 r--p 0000e000 08:08 264685     /lib/i386-linux-gnu/libudev.so.0.13.0
+80c04000-80c05000 rw-p 0000f000 08:08 264685     /lib/i386-linux-gnu/libudev.so.0.13.0
+80c05000-80c4c000 r-xp 00000000 08:08 265592     /lib/i386-linux-gnu/libdbus-1.so.3.5.8
+80c4c000-80c4d000 r--p 00047000 08:08 265592     /lib/i386-linux-gnu/libdbus-1.so.3.5.8
+80c4d000-80c4e000 rw-p 00048000 08:08 265592     /lib/i386-linux-gnu/libdbus-1.so.3.5.8
+80c4e000-80c50000 r--s 00010000 08:08 783241     /home/dima/Downloads/RubyMine-6.3/plugins/ruby-haml/lib/ruby-haml.jar
+80c50000-80c52000 r--s 00017000 08:08 783190     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/smartcvs-src.jar
+80c52000-80c5a000 r-xp 00000000 08:08 3265       /usr/lib/i386-linux-gnu/libgif.so.4.1.6
+80c5a000-80c5b000 r--p 00007000 08:08 3265       /usr/lib/i386-linux-gnu/libgif.so.4.1.6
+80c5b000-80c5c000 rw-p 00008000 08:08 3265       /usr/lib/i386-linux-gnu/libgif.so.4.1.6
+80c5c000-80c61000 r-xp 00000000 08:08 145271     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+80c61000-80c62000 r--p 00004000 08:08 145271     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+80c62000-80c63000 rw-p 00005000 08:08 145271     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+80c63000-80c78000 r-xp 00000000 08:08 6866       /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+80c78000-80c79000 r--p 00014000 08:08 6866       /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+80c79000-80c7a000 rw-p 00015000 08:08 6866       /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+80c7a000-80ca3000 r-xp 00000000 08:08 138224     /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+80ca3000-80ca4000 r--p 00028000 08:08 138224     /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+80ca4000-80ca5000 rw-p 00029000 08:08 138224     /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+80ca5000-80ce9000 r-xp 00000000 08:08 4827       /usr/lib/i386-linux-gnu/libibus-1.0.so.0.401.0
+80ce9000-80cea000 r--p 00043000 08:08 4827       /usr/lib/i386-linux-gnu/libibus-1.0.so.0.401.0
+80cea000-80ceb000 rw-p 00044000 08:08 4827       /usr/lib/i386-linux-gnu/libibus-1.0.so.0.401.0
+80ceb000-80cec000 r--s 00001000 08:08 783260     /home/dima/Downloads/RubyMine-6.3/plugins/sass/lib/resources_en.jar
+80cec000-80cf0000 r--s 00039000 08:08 783191     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/trilead-ssh2-build213.jar
+80cf0000-80cf7000 r-xp 00000000 08:08 10909      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libmanagement.so
+80cf7000-80cf8000 r--p 00006000 08:08 10909      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libmanagement.so
+80cf8000-80cf9000 rw-p 00007000 08:08 10909      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libmanagement.so
+80cf9000-80d00000 r--s 0003a000 08:08 782064     /home/dima/Downloads/RubyMine-6.3/lib/commons-codec-1.8.jar
+80d00000-80db0000 rw-p 00000000 00:00 0 
+80db0000-80e00000 ---p 00000000 00:00 0 
+80e00000-80e01000 r--s 00000000 08:08 783217     /home/dima/Downloads/RubyMine-6.3/plugins/less/lib/resources_en.jar
+80e01000-80e02000 r--s 00000000 08:08 783206     /home/dima/Downloads/RubyMine-6.3/plugins/haml/lib/resources_en.jar
+80e02000-80e03000 r--s 00000000 08:08 783221     /home/dima/Downloads/RubyMine-6.3/plugins/puppet/lib/resources_en.jar
+80e03000-80e09000 r-xp 00000000 08:08 136538     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+80e09000-80e0a000 r--p 00005000 08:08 136538     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+80e0a000-80e0b000 rw-p 00006000 08:08 136538     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+80e0b000-80e5d000 r--p 00000000 08:08 264690     /usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf
+80e5d000-80eb4000 r--p 00000000 08:08 281707     /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf
+80eb4000-80eb6000 r-xp 00000000 08:08 131429     /usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+80eb6000-80eb7000 r--p 00001000 08:08 131429     /usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+80eb7000-80eb8000 rw-p 00002000 08:08 131429     /usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+80eb8000-80eb9000 r--s 00000000 08:08 271113     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+80eb9000-80ebf000 r--s 00000000 08:08 270616     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+80ebf000-80ec1000 r--s 00000000 08:08 264726     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+80ec1000-80ec7000 r--s 00000000 08:08 264725     /var/cache/fontconfig/a6d8cf8e4ec09cdbc8633c31745a07dd-le32d4.cache-3
+80ec7000-80eca000 r--s 00000000 08:08 264724     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-3
+80eca000-80ecb000 r--s 00000000 08:08 264723     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+80ecb000-80ecc000 r--s 00000000 08:08 264722     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+80ecc000-80ed0000 r--s 00000000 08:08 264721     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+80ed0000-80ed7000 r--s 00000000 08:08 336991     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+80ed7000-80ee2000 r--s 00000000 08:08 264717     /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-3
+80ee2000-80ee5000 r--s 00000000 08:08 264716     /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-3
+80ee5000-80ee6000 r--s 00000000 08:08 263550     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+80ee6000-80ee9000 r--s 00000000 08:08 264714     /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-3
+80ee9000-80eed000 r--s 00000000 08:08 264713     /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-3
+80eed000-80eee000 r--s 00000000 08:08 264712     /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-3
+80eee000-80eef000 r--s 00000000 08:08 264711     /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-3
+80eef000-80ef3000 r--s 00000000 08:08 264710     /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-3
+80ef3000-80f00000 r--s 00000000 08:08 264709     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+80f00000-80ffc000 rw-p 00000000 00:00 0 
+80ffc000-81000000 ---p 00000000 00:00 0 
+81000000-81006000 r--s 00032000 08:08 783323     /home/dima/Downloads/RubyMine-6.3/plugins/terminal/lib/jediterm-pty-1.0.jar
+81006000-8101f000 r--s 00000000 08:08 281764     /usr/share/fonts/type1/gsfonts/b018012l.pfb
+8101f000-8103a000 r--s 00000000 08:08 281852     /usr/share/fonts/type1/gsfonts/p052004l.pfb
+8103a000-8104b000 r--s 00000000 08:08 281798     /usr/share/fonts/type1/gsfonts/n019023l.pfb
+8104b000-8105c000 r--s 00000000 08:08 281811     /usr/share/fonts/type1/gsfonts/n019063l.pfb
+8105c000-81072000 r--s 00000000 08:08 281843     /usr/share/fonts/type1/gsfonts/n022023l.pfb
+81072000-8108a000 r--s 00000000 08:08 281786     /usr/share/fonts/type1/gsfonts/c059036l.pfb
+8108a000-8109c000 r--s 00000000 08:08 281795     /usr/share/fonts/type1/gsfonts/n019004l.pfb
+8109c000-8109d000 r--s 00007000 08:08 783198     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/resources_en.jar
+8109d000-8109f000 r--s 0000e000 08:08 783194     /home/dima/Downloads/RubyMine-6.3/plugins/git4idea/lib/git4idea-rt.jar
+8109f000-810a2000 r--s 00032000 08:08 783325     /home/dima/Downloads/RubyMine-6.3/plugins/terminal/lib/terminal.jar
+810a2000-810a3000 r-xp 00000000 08:08 10901      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjawt.so
+810a3000-810a4000 r--p 00000000 08:08 10901      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjawt.so
+810a4000-810a5000 rw-p 00001000 08:08 10901      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjawt.so
+810a5000-810b6000 r--s 001db000 08:08 783173     /home/dima/Downloads/RubyMine-6.3/plugins/PerforceIntegration/lib/PerforceIntegration.jar
+810b6000-810b8000 r--s 0000d000 08:08 783174     /home/dima/Downloads/RubyMine-6.3/plugins/PerforceIntegration/lib/perforce_util.jar
+810b8000-810d0000 r--s 00000000 08:08 281832     /usr/share/fonts/type1/gsfonts/n022003l.pfb
+810d0000-810e6000 r--s 00000000 08:08 281829     /usr/share/fonts/type1/gsfonts/n021024l.pfb
+810e6000-810ff000 r--s 00000000 08:08 281840     /usr/share/fonts/type1/gsfonts/n022004l.pfb
+810ff000-81116000 r--s 00000000 08:08 281864     /usr/share/fonts/type1/gsfonts/z003034l.pfb
+81116000-81130000 r--s 00000000 08:08 281777     /usr/share/fonts/type1/gsfonts/c059013l.pfb
+81130000-81142000 r--s 00000000 08:08 281804     /usr/share/fonts/type1/gsfonts/n019043l.pfb
+81142000-81155000 r--s 00000000 08:08 281768     /usr/share/fonts/type1/gsfonts/b018015l.pfb
+81155000-81165000 r--s 00000000 08:08 281749     /usr/share/fonts/type1/gsfonts/a010013l.pfb
+81165000-8117e000 r--s 00000000 08:08 281819     /usr/share/fonts/type1/gsfonts/n021003l.pfb
+8117e000-81199000 r--s 00000000 08:08 281855     /usr/share/fonts/type1/gsfonts/p052023l.pfb
+81199000-811b4000 r--s 00000000 08:08 281849     /usr/share/fonts/type1/gsfonts/p052003l.pfb
+811b4000-811cb000 r--s 00000000 08:08 281825     /usr/share/fonts/type1/gsfonts/n021023l.pfb
+811cb000-811e4000 r--s 00000000 08:08 281822     /usr/share/fonts/type1/gsfonts/n021004l.pfb
+811e4000-811f4000 r--s 00000000 08:08 281755     /usr/share/fonts/type1/gsfonts/a010033l.pfb
+811f4000-81205000 r--s 00000000 08:08 281801     /usr/share/fonts/type1/gsfonts/n019024l.pfb
+81205000-8121d000 r--s 00000000 08:08 281783     /usr/share/fonts/type1/gsfonts/c059033l.pfb
+8121d000-81229000 r--s 00000000 08:08 281789     /usr/share/fonts/type1/gsfonts/d050000l.pfb
+81229000-8123a000 r--s 00000000 08:08 281758     /usr/share/fonts/type1/gsfonts/a010035l.pfb
+8123a000-81255000 r--s 00000000 08:08 281780     /usr/share/fonts/type1/gsfonts/c059016l.pfb
+81255000-8125e000 r--s 00000000 08:08 281861     /usr/share/fonts/type1/gsfonts/s050000l.pfb
+8125e000-81270000 r--s 00000000 08:08 281808     /usr/share/fonts/type1/gsfonts/n019044l.pfb
+81270000-81284000 r--s 00000000 08:08 281792     /usr/share/fonts/type1/gsfonts/n019003l.pfb
+81284000-81299000 r--s 00000000 08:08 281771     /usr/share/fonts/type1/gsfonts/b018032l.pfb
+81299000-812af000 r--s 00000000 08:08 281846     /usr/share/fonts/type1/gsfonts/n022024l.pfb
+812af000-812c2000 r--s 00000000 08:08 281814     /usr/share/fonts/type1/gsfonts/n019064l.pfb
+812c2000-812d4000 r--s 00000000 08:08 281774     /usr/share/fonts/type1/gsfonts/b018035l.pfb
+812d4000-812e4000 r--s 00000000 08:08 281752     /usr/share/fonts/type1/gsfonts/a010015l.pfb
+812e4000-812ee000 r--s 00000000 08:08 280895     /usr/share/fonts/X11/Type1/c0419bt_.pfb
+812ee000-812f8000 r--s 00000000 08:08 280899     /usr/share/fonts/X11/Type1/c0583bt_.pfb
+812f8000-81301000 r--s 00000000 08:08 280903     /usr/share/fonts/X11/Type1/c0632bt_.pfb
+81301000-8130b000 r--s 00000000 08:08 281872     /usr/share/fonts/type1/mathml/Symbol.pfb
+8130b000-81314000 r--s 00000000 08:08 280909     /usr/share/fonts/X11/Type1/c0649bt_.pfb
+81314000-8131e000 r--s 00000000 08:08 280897     /usr/share/fonts/X11/Type1/c0582bt_.pfb
+8131e000-81327000 r--s 00000000 08:08 280907     /usr/share/fonts/X11/Type1/c0648bt_.pfb
+81327000-81330000 r--s 00000000 08:08 280905     /usr/share/fonts/X11/Type1/c0633bt_.pfb
+81330000-813b6000 rw-p 00000000 00:00 0 
+813b6000-813cc000 r-xp 00000000 08:08 10899      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+813cc000-813cd000 r--p 00015000 08:08 10899      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+813cd000-813ce000 rw-p 00016000 08:08 10899      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+813ce000-81403000 r-xp 00000000 08:08 151456     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+81403000-81404000 r--p 00034000 08:08 151456     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+81404000-81405000 rw-p 00035000 08:08 151456     /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+81405000-81406000 ---p 00000000 00:00 0 
+81406000-81c06000 rw-p 00000000 00:00 0          [stack:23461]
+81c06000-81c0c000 r-xp 00000000 08:08 5100       /usr/lib/i386-linux-gnu/libogg.so.0.7.1
+81c0c000-81c0d000 r--p 00005000 08:08 5100       /usr/lib/i386-linux-gnu/libogg.so.0.7.1
+81c0d000-81c0e000 rw-p 00006000 08:08 5100       /usr/lib/i386-linux-gnu/libogg.so.0.7.1
+81c0e000-81c37000 r-xp 00000000 08:08 4618       /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+81c37000-81c38000 r--p 00028000 08:08 4618       /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+81c38000-81c39000 rw-p 00029000 08:08 4618       /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+81c39000-81c41000 r-xp 00000000 08:08 4610       /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+81c41000-81c42000 r--p 00008000 08:08 4610       /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+81c42000-81c43000 rw-p 00009000 08:08 4610       /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+81c43000-81c54000 r-xp 00000000 08:08 1256       /usr/lib/i386-linux-gnu/libtdb.so.1.2.9
+81c54000-81c55000 r--p 00010000 08:08 1256       /usr/lib/i386-linux-gnu/libtdb.so.1.2.9
+81c55000-81c56000 rw-p 00011000 08:08 1256       /usr/lib/i386-linux-gnu/libtdb.so.1.2.9
+81c56000-81c5e000 r-xp 00000000 08:08 4616       /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+81c5e000-81c5f000 r--p 00007000 08:08 4616       /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+81c5f000-81c60000 rw-p 00008000 08:08 4616       /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+81c60000-81c6f000 r-xp 00000000 08:08 6789       /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+81c6f000-81c70000 r--p 0000e000 08:08 6789       /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+81c70000-81c71000 rw-p 0000f000 08:08 6789       /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+81c71000-81c75000 r-xp 00000000 08:08 2976       /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.8
+81c75000-81c76000 r--p 00003000 08:08 2976       /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.8
+81c76000-81c77000 rw-p 00004000 08:08 2976       /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.8
+81c77000-81c78000 r--s 00007000 08:08 783189     /home/dima/Downloads/RubyMine-6.3/plugins/cvsIntegration/lib/resources_en.jar
+81c78000-81c82000 r--s 00000000 08:08 280901     /usr/share/fonts/X11/Type1/c0611bt_.pfb
+81c82000-81c8a000 r-xp 00000000 08:08 10900      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnio.so
+81c8a000-81c8b000 r--p 00007000 08:08 10900      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnio.so
+81c8b000-81c8c000 rw-p 00008000 08:08 10900      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnio.so
+81c8c000-81c91000 r-xp 00000000 08:08 131047     /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+81c91000-81c92000 r--p 00004000 08:08 131047     /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+81c92000-81c93000 rw-p 00005000 08:08 131047     /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+81c93000-81c94000 ---p 00000000 00:00 0 
+81c94000-82494000 rw-p 00000000 00:00 0          [stack:23460]
+82494000-8249a000 r--p 00000000 08:08 732348     /home/dima/.config/dconf/user
+8249a000-824a1000 r-xp 00000000 08:08 132093     /usr/lib/i386-linux-gnu/gio/modules/libdconfsettings.so
+824a1000-824a2000 r--p 00006000 08:08 132093     /usr/lib/i386-linux-gnu/gio/modules/libdconfsettings.so
+824a2000-824a3000 rw-p 00007000 08:08 132093     /usr/lib/i386-linux-gnu/gio/modules/libdconfsettings.so
+824a3000-824c7000 r--p 00000000 08:08 1203       /usr/share/glib-2.0/schemas/gschemas.compiled
+824c7000-82501000 r-xp 00000000 08:08 276628     /lib/i386-linux-gnu/libpcre.so.3.12.1
+82501000-82502000 r--p 00039000 08:08 276628     /lib/i386-linux-gnu/libpcre.so.3.12.1
+82502000-82503000 rw-p 0003a000 08:08 276628     /lib/i386-linux-gnu/libpcre.so.3.12.1
+82503000-82508000 r-xp 00000000 08:08 2104       /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+82508000-82509000 r--p 00004000 08:08 2104       /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+82509000-8250a000 rw-p 00005000 08:08 2104       /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+8250a000-82530000 r-xp 00000000 08:08 263318     /lib/i386-linux-gnu/libexpat.so.1.5.2
+82530000-82531000 ---p 00026000 08:08 263318     /lib/i386-linux-gnu/libexpat.so.1.5.2
+82531000-82533000 r--p 00026000 08:08 263318     /lib/i386-linux-gnu/libexpat.so.1.5.2
+82533000-82534000 rw-p 00028000 08:08 263318     /lib/i386-linux-gnu/libexpat.so.1.5.2
+82534000-82547000 r-xp 00000000 08:08 342730     /lib/i386-linux-gnu/libresolv-2.15.so
+82547000-82548000 ---p 00013000 08:08 342730     /lib/i386-linux-gnu/libresolv-2.15.so
+82548000-82549000 r--p 00013000 08:08 342730     /lib/i386-linux-gnu/libresolv-2.15.so
+82549000-8254a000 rw-p 00014000 08:08 342730     /lib/i386-linux-gnu/libresolv-2.15.so
+8254a000-8254c000 rw-p 00000000 00:00 0 
+8254c000-82569000 r-xp 00000000 08:08 264598     /lib/i386-linux-gnu/libselinux.so.1
+82569000-8256a000 r--p 0001c000 08:08 264598     /lib/i386-linux-gnu/libselinux.so.1
+8256a000-8256b000 rw-p 0001d000 08:08 264598     /lib/i386-linux-gnu/libselinux.so.1
+8256b000-8256e000 r-xp 00000000 08:08 6156       /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3200.4
+8256e000-8256f000 r--p 00002000 08:08 6156       /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3200.4
+8256f000-82570000 rw-p 00003000 08:08 6156       /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3200.4
+82570000-82578000 r-xp 00000000 08:08 5290       /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+82578000-82579000 r--p 00008000 08:08 5290       /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+82579000-8257a000 rw-p 00009000 08:08 5290       /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+8257a000-8257c000 r-xp 00000000 08:08 3054       /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+8257c000-8257d000 r--p 00001000 08:08 3054       /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+8257d000-8257e000 rw-p 00002000 08:08 3054       /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+8257e000-825a6000 r-xp 00000000 08:08 263341     /lib/i386-linux-gnu/libpng12.so.0.46.0
+825a6000-825a7000 r--p 00027000 08:08 263341     /lib/i386-linux-gnu/libpng12.so.0.46.0
+825a7000-825a8000 rw-p 00028000 08:08 263341     /lib/i386-linux-gnu/libpng12.so.0.46.0
+825a8000-8269f000 r-xp 00000000 08:08 275520     /lib/i386-linux-gnu/libglib-2.0.so.0.3200.4
+8269f000-826a0000 r--p 000f6000 08:08 275520     /lib/i386-linux-gnu/libglib-2.0.so.0.3200.4
+826a0000-826a1000 rw-p 000f7000 08:08 275520     /lib/i386-linux-gnu/libglib-2.0.so.0.3200.4
+826a1000-826ee000 r-xp 00000000 08:08 6076       /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3200.4
+826ee000-826ef000 r--p 0004c000 08:08 6076       /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3200.4
+826ef000-826f0000 rw-p 0004d000 08:08 6076       /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3200.4
+826f0000-82722000 r-xp 00000000 08:08 144        /usr/lib/i386-linux-gnu/libfontconfig.so.1.4.4
+82722000-82723000 r--p 00032000 08:08 144        /usr/lib/i386-linux-gnu/libfontconfig.so.1.4.4
+82723000-82724000 rw-p 00033000 08:08 144        /usr/lib/i386-linux-gnu/libfontconfig.so.1.4.4
+82724000-8276b000 r-xp 00000000 08:08 5006       /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3000.0
+8276b000-8276c000 ---p 00047000 08:08 5006       /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3000.0
+8276c000-8276d000 r--p 00047000 08:08 5006       /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3000.0
+8276d000-8276e000 rw-p 00048000 08:08 5006       /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3000.0
+8276e000-82798000 r-xp 00000000 08:08 5024       /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3000.0
+82798000-82799000 r--p 00029000 08:08 5024       /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3000.0
+82799000-8279a000 rw-p 0002a000 08:08 5024       /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3000.0
+8279a000-828ed000 r-xp 00000000 08:08 6077       /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3200.4
+828ed000-828ef000 r--p 00153000 08:08 6077       /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3200.4
+828ef000-828f0000 rw-p 00155000 08:08 6077       /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3200.4
+828f0000-828f1000 rw-p 00000000 00:00 0 
+828f1000-829b8000 r-xp 00000000 08:08 2100       /usr/lib/i386-linux-gnu/libcairo.so.2.11000.2
+829b8000-829b9000 r--p 000c7000 08:08 2100       /usr/lib/i386-linux-gnu/libcairo.so.2.11000.2
+829b9000-829ba000 rw-p 000c8000 08:08 2100       /usr/lib/i386-linux-gnu/libcairo.so.2.11000.2
+829ba000-829bc000 rw-p 00000000 00:00 0 
+829bc000-829d9000 r-xp 00000000 08:08 199        /usr/lib/i386-linux-gnu/libatk-1.0.so.0.20409.1
+829d9000-829db000 r--p 0001c000 08:08 199        /usr/lib/i386-linux-gnu/libatk-1.0.so.0.20409.1
+829db000-829dc000 rw-p 0001e000 08:08 199        /usr/lib/i386-linux-gnu/libatk-1.0.so.0.20409.1
+829dc000-829e7000 r-xp 00000000 08:08 5018       /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3000.0
+829e7000-829e8000 r--p 0000a000 08:08 5018       /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3000.0
+829e8000-829e9000 rw-p 0000b000 08:08 5018       /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3000.0
+829e9000-82a94000 r-xp 00000000 08:08 768        /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+82a94000-82a95000 ---p 000ab000 08:08 768        /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+82a95000-82a97000 r--p 000ab000 08:08 768        /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+82a97000-82a98000 rw-p 000ad000 08:08 768        /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+82a98000-82ef8000 r-xp 00000000 08:08 767        /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+82ef8000-82efc000 r--p 00460000 08:08 767        /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+82efc000-82efe000 rw-p 00464000 08:08 767        /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+82efe000-82f00000 rw-p 00000000 00:00 0 
+82f00000-82fff000 rw-p 00000000 00:00 0 
+82fff000-83000000 ---p 00000000 00:00 0 
+83000000-83001000 r--s 00002000 08:08 783175     /home/dima/Downloads/RubyMine-6.3/plugins/PerforceIntegration/lib/resources_en.jar
+83001000-83002000 rw-p 00000000 00:00 0 
+83002000-83097000 r-xp 00000000 08:08 37         /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+83097000-8309c000 r--p 00095000 08:08 37         /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+8309c000-8309d000 rw-p 0009a000 08:08 37         /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+8309d000-830a0000 ---p 00000000 00:00 0 
+830a0000-830ee000 rw-p 00000000 00:00 0          [stack:23459]
+830ee000-830f4000 r--s 00000000 08:08 270616     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+830f4000-830fa000 r--s 00000000 08:08 264725     /var/cache/fontconfig/a6d8cf8e4ec09cdbc8633c31745a07dd-le32d4.cache-3
+830fa000-830fd000 r--s 00000000 08:08 264724     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-3
+830fd000-83101000 r--s 00000000 08:08 264721     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+83101000-83102000 r--p 00000000 00:00 0 
+83102000-83104000 r-xp 00000000 08:08 969        /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+83104000-83105000 r--p 00001000 08:08 969        /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+83105000-83106000 rw-p 00002000 08:08 969        /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+83106000-83108000 r-xp 00000000 08:08 835        /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+83108000-83109000 r--p 00001000 08:08 835        /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+83109000-8310a000 rw-p 00002000 08:08 835        /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+8310a000-83129000 r-xp 00000000 08:08 3317       /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+83129000-8312a000 r--p 0001e000 08:08 3317       /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+8312a000-8312b000 rw-p 0001f000 08:08 3317       /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+8312b000-8312c000 r--s 00000000 08:08 271113     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+8312c000-83132000 r--s 00000000 08:08 270616     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+83132000-83134000 r--s 00000000 08:08 264726     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+83134000-8313a000 r--s 00000000 08:08 264725     /var/cache/fontconfig/a6d8cf8e4ec09cdbc8633c31745a07dd-le32d4.cache-3
+8313a000-8313d000 r--s 00000000 08:08 264724     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-3
+8313d000-8313e000 r--s 00000000 08:08 264723     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+8313e000-8313f000 r--s 00000000 08:08 264722     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+8313f000-83143000 r--s 00000000 08:08 264721     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+83143000-8314a000 r--s 00000000 08:08 336991     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+8314a000-83155000 r--s 00000000 08:08 264717     /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-3
+83155000-8315c000 r--s 00000000 08:08 336991     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+8315c000-83167000 r--s 00000000 08:08 264717     /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-3
+83167000-8316a000 r--s 00000000 08:08 264716     /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-3
+8316a000-8316c000 r--s 00000000 08:08 264698     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+8316c000-83173000 r-xp 00000000 08:08 36053      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+83173000-83174000 r--p 00006000 08:08 36053      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+83174000-83175000 rw-p 00007000 08:08 36053      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+83175000-83177000 r-xp 00000000 08:08 36042      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+83177000-83178000 r--p 00001000 08:08 36042      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+83178000-83179000 rw-p 00002000 08:08 36042      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+83179000-8317d000 r-xp 00000000 08:08 36002      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+8317d000-8317e000 r--p 00004000 08:08 36002      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+8317e000-8317f000 rw-p 00005000 08:08 36002      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+8317f000-83188000 r-xp 00000000 08:08 36021      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+83188000-83189000 r--p 00008000 08:08 36021      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+83189000-8318a000 rw-p 00009000 08:08 36021      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+8318a000-8318d000 r--s 00000000 08:08 262983     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+8318d000-8319d000 r-xp 00000000 08:08 3577       /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+8319d000-8319e000 r--p 0000f000 08:08 3577       /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+8319e000-8319f000 rw-p 00010000 08:08 3577       /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+8319f000-831a2000 r--s 00000000 08:08 264714     /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-3
+831a2000-831a6000 r--s 00000000 08:08 264713     /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-3
+831a6000-831b3000 r--s 00000000 08:08 264709     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+831b3000-831b6000 ---p 00000000 00:00 0 
+831b6000-83204000 rw-p 00000000 00:00 0          [stack:23458]
+83204000-83299000 r-xp 00000000 08:08 895        /usr/lib/i386-linux-gnu/libfreetype.so.6.8.0
+83299000-8329d000 r--p 00094000 08:08 895        /usr/lib/i386-linux-gnu/libfreetype.so.6.8.0
+8329d000-8329e000 rw-p 00098000 08:08 895        /usr/lib/i386-linux-gnu/libfreetype.so.6.8.0
+8329e000-832ec000 r-xp 00000000 08:08 10884      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libfontmanager.so
+832ec000-832ed000 r--p 0004e000 08:08 10884      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libfontmanager.so
+832ed000-832ee000 rw-p 0004f000 08:08 10884      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libfontmanager.so
+832ee000-8330d000 r-xp 00000000 08:08 35962      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+8330d000-8330e000 r--p 0001f000 08:08 35962      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+8330e000-8330f000 rw-p 00020000 08:08 35962      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+8330f000-8343f000 r-xp 00000000 08:08 23186      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+8343f000-83440000 r--p 0012f000 08:08 23186      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+83440000-83442000 rw-p 00130000 08:08 23186      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+83442000-83443000 rw-p 00000000 00:00 0 
+83443000-834d4000 r-xp 00000000 08:08 10898      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libawt.so
+834d4000-834d5000 r--p 00090000 08:08 10898      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libawt.so
+834d5000-834dc000 rw-p 00091000 08:08 10898      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libawt.so
+834dc000-83500000 rw-p 00000000 00:00 0 
+83500000-835f5000 rw-p 00000000 00:00 0 
+835f5000-83600000 ---p 00000000 00:00 0 
+83600000-83601000 r--s 00000000 08:08 732337     /home/dima/.cache/dconf/user
+83601000-83602000 r--s 00000000 08:08 271113     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+83602000-83605000 r--s 00000000 08:08 264716     /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-3
+83605000-83606000 r--s 00000000 08:08 263550     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+83606000-83609000 r--s 00000000 08:08 264714     /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-3
+83609000-8360d000 r--s 00000000 08:08 264713     /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-3
+8360d000-8360e000 r--s 00000000 08:08 264712     /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-3
+8360e000-8360f000 r--s 00000000 08:08 264711     /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-3
+8360f000-83613000 r--s 00000000 08:08 264710     /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-3
+83613000-83618000 r-xp 00000000 08:08 1321       /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+83618000-83619000 r--p 00004000 08:08 1321       /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+83619000-8361a000 rw-p 00005000 08:08 1321       /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+8361a000-83629000 r-xp 00000000 08:08 36037      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+83629000-8362a000 r--p 0000e000 08:08 36037      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+8362a000-8362b000 rw-p 0000f000 08:08 36037      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+8362b000-83630000 r-xp 00000000 08:08 94165      /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83630000-83631000 r--p 00004000 08:08 94165      /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83631000-83632000 rw-p 00005000 08:08 94165      /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+83632000-8363a000 r-xp 00000000 08:08 36012      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+8363a000-8363b000 r--p 00007000 08:08 36012      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+8363b000-8363c000 rw-p 00008000 08:08 36012      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+8363c000-8363e000 r--s 00000000 08:08 264726     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+8363e000-8363f000 r--s 00000000 08:08 264712     /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-3
+8363f000-8364c000 r--s 00000000 08:08 264709     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+8364c000-8364e000 r--s 00000000 08:08 264698     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+8364e000-83651000 r--s 00000000 08:08 262983     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+83651000-8369f000 r-xp 00000000 08:08 10944      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/xawt/libmawt.so
+8369f000-836a0000 r--p 0004d000 08:08 10944      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/xawt/libmawt.so
+836a0000-836a2000 rw-p 0004e000 08:08 10944      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/xawt/libmawt.so
+836a2000-836a3000 rw-p 00000000 00:00 0 
+836a3000-8376b000 r--s 00f5c000 08:08 782137     /home/dima/Downloads/RubyMine-6.3/lib/openapi.jar
+8376b000-8377a000 r--s 0006b000 08:08 782097     /home/dima/Downloads/RubyMine-6.3/lib/trang-core.jar
+8377a000-83782000 r--s 0007a000 08:08 782092     /home/dima/Downloads/RubyMine-6.3/lib/jh.jar
+83782000-83783000 r--s 0000b000 08:08 782163     /home/dima/Downloads/RubyMine-6.3/lib/xpp3-1.1.4-min.jar
+83783000-83789000 r--s 0003d000 08:08 782151     /home/dima/Downloads/RubyMine-6.3/lib/snakeyaml-1.13.jar
+83789000-8378b000 r--s 00130000 08:08 782152     /home/dima/Downloads/RubyMine-6.3/lib/snappy-java-1.0.5.jar
+8378b000-8378e000 r--s 00017000 08:08 782165     /home/dima/Downloads/RubyMine-6.3/lib/yjp-controller-api-redist.jar
+8378e000-83790000 r--s 00013000 08:08 782144     /home/dima/Downloads/RubyMine-6.3/lib/resolver.jar
+83790000-83797000 r--s 00040000 08:08 782062     /home/dima/Downloads/RubyMine-6.3/lib/cglib-2.2.2.jar
+83797000-83799000 r--s 00007000 08:08 782068     /home/dima/Downloads/RubyMine-6.3/lib/coverage-agent.jar
+83799000-8379f000 r--s 00047000 08:08 782065     /home/dima/Downloads/RubyMine-6.3/lib/commons-httpclient-3.1-patched.jar
+8379f000-837a5000 r--s 00067000 08:08 782156     /home/dima/Downloads/RubyMine-6.3/lib/trove4j_src.jar
+837a5000-837fb000 r--s 00319000 08:08 782058     /home/dima/Downloads/RubyMine-6.3/lib/batik.jar
+837fb000-837fe000 r--s 0001b000 08:08 782109     /home/dima/Downloads/RubyMine-6.3/lib/junit.jar
+837fe000-83803000 r--s 00039000 08:08 782052     /home/dima/Downloads/RubyMine-6.3/lib/antlr-runtime-4.1.jar
+83803000-8381f000 r--s 00173000 08:08 782136     /home/dima/Downloads/RubyMine-6.3/lib/netty-all-5.0.0.Alpha2.jar
+8381f000-83821000 r--s 00004000 08:08 782069     /home/dima/Downloads/RubyMine-6.3/lib/coverage-util.jar
+83821000-83823000 r--s 00004000 08:08 782051     /home/dima/Downloads/RubyMine-6.3/lib/annotations.jar
+83823000-8382f000 r--s 00084000 08:08 782080     /home/dima/Downloads/RubyMine-6.3/lib/httpclient-4.3.2.jar
+8382f000-83835000 r--s 0003f000 08:08 782081     /home/dima/Downloads/RubyMine-6.3/lib/httpcore-4.3.1.jar
+83835000-83837000 r--s 00001000 08:08 782101     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.core.jar
+83837000-8383a000 r--s 0026d000 08:08 782145     /home/dima/Downloads/RubyMine-6.3/lib/resources.jar
+8383a000-8383d000 r--s 00020000 08:08 782143     /home/dima/Downloads/RubyMine-6.3/lib/purejavacomm.jar
+8383d000-8383f000 r--s 0000a000 08:08 782150     /home/dima/Downloads/RubyMine-6.3/lib/serviceMessages.jar
+8383f000-83840000 r--s 00006000 08:08 782159     /home/dima/Downloads/RubyMine-6.3/lib/winp-1.17-patched.jar
+83840000-83845000 r--s 0002a000 08:08 782076     /home/dima/Downloads/RubyMine-6.3/lib/gson-2.2.4.jar
+83845000-83847000 r--s 00000000 08:08 782103     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.sshagent.jar
+83847000-8384c000 r--s 0003e000 08:08 782067     /home/dima/Downloads/RubyMine-6.3/lib/commons-net-3.1.jar
+8384c000-83850000 r--s 0001d000 08:08 782133     /home/dima/Downloads/RubyMine-6.3/lib/microba.jar
+83850000-83857000 r--s 00099000 08:08 782148     /home/dima/Downloads/RubyMine-6.3/lib/rngom-20051226-patched.jar
+83857000-83859000 r--s 00008000 08:08 782082     /home/dima/Downloads/RubyMine-6.3/lib/httpmime-4.3.2.jar
+83859000-83866000 r--s 00109000 08:08 782147     /home/dima/Downloads/RubyMine-6.3/lib/rhino-js-1_7R4.jar
+83866000-83868000 r--s 0001b000 08:08 782087     /home/dima/Downloads/RubyMine-6.3/lib/jayatana-1.2.4.jar
+83868000-83869000 r--s 00002000 08:08 782063     /home/dima/Downloads/RubyMine-6.3/lib/cli-parser-1.1.jar
+83869000-83872000 r--s 00133000 08:08 782088     /home/dima/Downloads/RubyMine-6.3/lib/jcodings-1.0.10.jar
+83872000-83878000 r--s 00036000 08:08 782108     /home/dima/Downloads/RubyMine-6.3/lib/junit-4.11.jar
+83878000-83883000 r--s 000d5000 08:08 782094     /home/dima/Downloads/RubyMine-6.3/lib/jna-utils.jar
+83883000-8388e000 r--s 0008d000 08:08 782149     /home/dima/Downloads/RubyMine-6.3/lib/sanselan-0.98-snapshot.jar
+8388e000-838a6000 r--s 00115000 08:08 782161     /home/dima/Downloads/RubyMine-6.3/lib/xerces.jar
+838a6000-838aa000 r--s 00018000 08:08 782139     /home/dima/Downloads/RubyMine-6.3/lib/picocontainer.jar
+838aa000-838b0000 r--s 00059000 08:08 782053     /home/dima/Downloads/RubyMine-6.3/lib/asm-all.jar
+838b0000-838b2000 r--s 00008000 08:08 782054     /home/dima/Downloads/RubyMine-6.3/lib/asm-commons.jar
+838b2000-838b4000 r--s 00009000 08:08 782142     /home/dima/Downloads/RubyMine-6.3/lib/pty4j-0.3.jar
+838b4000-838cd000 r--s 001eb000 08:08 782070     /home/dima/Downloads/RubyMine-6.3/lib/cucumber-core-1.0.14.jar
+838cd000-838d0000 r--s 0002d000 08:08 782085     /home/dima/Downloads/RubyMine-6.3/lib/isorelax.jar
+838d0000-838d3000 r--s 0001a000 08:08 782162     /home/dima/Downloads/RubyMine-6.3/lib/xmlrpc-2.0.jar
+838d3000-838d5000 r--s 0000e000 08:08 782066     /home/dima/Downloads/RubyMine-6.3/lib/commons-logging-1.1.3.jar
+838d5000-838d7000 r--s 00004000 08:08 782107     /home/dima/Downloads/RubyMine-6.3/lib/jsr173_1.0_api.jar
+838d7000-838d9000 r--s 00007000 08:08 782132     /home/dima/Downloads/RubyMine-6.3/lib/markdownj-core-0.4.2-SNAPSHOT.jar
+838d9000-838dc000 r--s 00013000 08:08 782091     /home/dima/Downloads/RubyMine-6.3/lib/jgoodies-forms.jar
+838dc000-838de000 r--s 0000c000 08:08 782084     /home/dima/Downloads/RubyMine-6.3/lib/instrumenter.jar
+838de000-838e5000 r--s 0007b000 08:08 782140     /home/dima/Downloads/RubyMine-6.3/lib/protobuf-2.5.0.jar
+838e5000-838e9000 r--s 00348000 08:08 782153     /home/dima/Downloads/RubyMine-6.3/lib/sqlite-jdbc-3.6.20.1.jar
+838e9000-838eb000 r--s 0000e000 08:08 782138     /home/dima/Downloads/RubyMine-6.3/lib/oromatcher.jar
+838eb000-838f1000 r--s 00031000 08:08 782086     /home/dima/Downloads/RubyMine-6.3/lib/jaxen-1.1.3.jar
+838f1000-83900000 r--s 00068000 08:08 782093     /home/dima/Downloads/RubyMine-6.3/lib/jing.jar
+83900000-839f9000 rw-p 00000000 00:00 0 
+839f9000-83a00000 ---p 00000000 00:00 0 
+83a00000-83afe000 rw-p 00000000 00:00 0 
+83afe000-83b00000 ---p 00000000 00:00 0 
+83b00000-83bea000 rw-p 00000000 00:00 0 
+83bea000-83c00000 ---p 00000000 00:00 0 
+83c00000-83c01000 r--s 00000000 08:08 264711     /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-3
+83c01000-83c05000 r--s 00039000 08:08 782099     /home/dima/Downloads/RubyMine-6.3/lib/jsch-0.1.50.jar
+83c05000-83c20000 r--s 00147000 08:08 782154     /home/dima/Downloads/RubyMine-6.3/lib/swingx-core-1.6.2.jar
+83c20000-83c22000 r--s 00009000 08:08 782135     /home/dima/Downloads/RubyMine-6.3/lib/nanoxml-2.2.3.jar
+83c22000-83c23000 r--s 00002000 08:08 782061     /home/dima/Downloads/RubyMine-6.3/lib/bytelist-1.0.2.jar
+83c23000-83c24000 r--s 00001000 08:08 782102     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.pageant.jar
+83c24000-83c28000 r--s 0002d000 08:08 782057     /home/dima/Downloads/RubyMine-6.3/lib/automaton.jar
+83c28000-83c51000 r--s 001ee000 08:08 782077     /home/dima/Downloads/RubyMine-6.3/lib/guava-14.0.1.jar
+83c51000-83c5d000 r--s 0006a000 08:08 782164     /home/dima/Downloads/RubyMine-6.3/lib/xstream-1.4.3.jar
+83c5d000-83c5f000 r--s 00011000 08:08 782090     /home/dima/Downloads/RubyMine-6.3/lib/jettison-1.3.2.jar
+83c5f000-83c60000 r--s 00005000 08:08 782072     /home/dima/Downloads/RubyMine-6.3/lib/fluent-hc-4.3.2.jar
+83c60000-83c63000 r--s 0002b000 08:08 782098     /home/dima/Downloads/RubyMine-6.3/lib/joni-2.0.0.jar
+83c63000-83c68000 r--s 00034000 08:08 782110     /home/dima/Downloads/RubyMine-6.3/lib/jvyamlb-0.2.5.jar
+83c68000-83c6b000 r--s 00029000 08:08 782141     /home/dima/Downloads/RubyMine-6.3/lib/proxy-vole_20120920.jar
+83c6b000-83c72000 r--s 00148000 08:08 782074     /home/dima/Downloads/RubyMine-6.3/lib/gherkin-2.11.2.jar
+83c72000-83c73000 r--s 0000a000 08:08 782055     /home/dima/Downloads/RubyMine-6.3/lib/asm.jar
+83c73000-83cd9000 r--s 005dc000 08:08 782075     /home/dima/Downloads/RubyMine-6.3/lib/groovy-all-2.2.1.jar
+83cd9000-83ce8000 r--s 01f95000 08:08 782146     /home/dima/Downloads/RubyMine-6.3/lib/resources_en.jar
+83ce8000-84000000 r--s 0575f000 08:08 783130     /home/dima/Downloads/RubyMine-6.3/lib/rubymine.jar
+84000000-84100000 rw-p 00000000 00:00 0 
+84100000-84104000 r--s 00000000 08:08 264710     /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-3
+84104000-84113000 r--s 0007f000 08:08 782096     /home/dima/Downloads/RubyMine-6.3/lib/joda-time-2.3.jar
+84113000-84115000 r--s 00011000 08:08 782134     /home/dima/Downloads/RubyMine-6.3/lib/miglayout-swing.jar
+84115000-84116000 r--s 00001000 08:08 782105     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.usocket-nc.jar
+84116000-84153000 r--s 00251000 08:08 782160     /home/dima/Downloads/RubyMine-6.3/lib/xbean.jar
+84153000-841af000 rw-p 00000000 00:00 0 
+841af000-841b2000 ---p 00000000 00:00 0 
+841b2000-84200000 rw-p 00000000 00:00 0          [stack:23457]
+84200000-842f3000 rw-p 00000000 00:00 0 
+842f3000-84300000 ---p 00000000 00:00 0 
+84300000-84303000 r--s 00000000 08:08 262983     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+84303000-84313000 r-xp 00000000 08:08 36030      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+84313000-84314000 r--p 0000f000 08:08 36030      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+84314000-84315000 rw-p 00010000 08:08 36030      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+84315000-84316000 r--s 00002000 08:08 782100     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.connector-factory.jar
+84316000-84317000 r--s 00001000 08:08 782104     /home/dima/Downloads/RubyMine-6.3/lib/jsch.agentproxy.usocket-jna.jar
+84317000-84318000 r--s 0000a000 08:08 782112     /home/dima/Downloads/RubyMine-6.3/lib/kxml2-2.3.0.jar
+84318000-84319000 r--s 0000c000 08:08 782079     /home/dima/Downloads/RubyMine-6.3/lib/hamcrest-library-1.3.jar
+84319000-8431a000 r--s 00010000 08:08 782111     /home/dima/Downloads/RubyMine-6.3/lib/jzlib-1.1.1.jar
+8431a000-8431c000 r--s 0000e000 08:08 782073     /home/dima/Downloads/RubyMine-6.3/lib/forms_rt.jar
+8431c000-84320000 r--s 0004b000 08:08 782056     /home/dima/Downloads/RubyMine-6.3/lib/asm4-all.jar
+84320000-84328000 r--s 00049000 08:08 782050     /home/dima/Downloads/RubyMine-6.3/lib/alloy.jar
+84328000-84335000 r--s 000ab000 08:08 782158     /home/dima/Downloads/RubyMine-6.3/lib/velocity.jar
+84335000-8433d000 r--s 00058000 08:08 782155     /home/dima/Downloads/RubyMine-6.3/lib/trove4j.jar
+8433d000-8434a000 r--s 00107000 08:08 7266       /usr/lib/jvm/java-6-openjdk-common/jre/lib/rhino.jar
+8434a000-84353000 r--s 0006f000 08:08 782131     /home/dima/Downloads/RubyMine-6.3/lib/log4j.jar
+84353000-84354000 ---p 00000000 00:00 0 
+84354000-843d4000 rw-p 00000000 00:00 0          [stack:23456]
+843d4000-843d7000 ---p 00000000 00:00 0 
+843d7000-84425000 rw-p 00000000 00:00 0          [stack:23455]
+84425000-84428000 ---p 00000000 00:00 0 
+84428000-844a6000 rw-p 00000000 00:00 0          [stack:23454]
+844a6000-844a9000 ---p 00000000 00:00 0 
+844a9000-84527000 rw-p 00000000 00:00 0          [stack:23453]
+84527000-8452a000 ---p 00000000 00:00 0 
+8452a000-84578000 rw-p 00000000 00:00 0          [stack:23452]
+84578000-8457b000 ---p 00000000 00:00 0 
+8457b000-845c9000 rw-p 00000000 00:00 0          [stack:23451]
+845c9000-847c9000 r--p 00000000 08:08 146        /usr/lib/locale/locale-archive
+847c9000-847cc000 ---p 00000000 00:00 0 
+847cc000-8481a000 rw-p 00000000 00:00 0          [stack:23450]
+8481a000-8481d000 ---p 00000000 00:00 0 
+8481d000-8486b000 rw-p 00000000 00:00 0          [stack:23449]
+8486b000-84a00000 r--s 01a09000 08:08 10910      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar
+84a00000-84af9000 rw-p 00000000 00:00 0 
+84af9000-84b00000 ---p 00000000 00:00 0 
+84b00000-84bfe000 rw-p 00000000 00:00 0 
+84bfe000-84c00000 ---p 00000000 00:00 0 
+84c00000-84cfc000 rw-p 00000000 00:00 0 
+84cfc000-84d00000 ---p 00000000 00:00 0 
+84d00000-84d01000 r--s 00000000 08:08 264723     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+84d01000-84d02000 r--s 00000000 08:08 264722     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+84d02000-84d03000 ---p 00000000 00:00 0 
+84d03000-84d83000 rw-p 00000000 00:00 0          [stack:23448]
+84d83000-84d84000 ---p 00000000 00:00 0 
+84d84000-8631b000 rw-p 00000000 00:00 0          [stack:23447]
+8631b000-8639b000 rw-p 00000000 00:00 0 
+8639b000-863b1000 rw-p 00000000 00:00 0 
+863b1000-863f0000 rw-p 00000000 00:00 0 
+863f0000-8641b000 rw-p 00000000 00:00 0 
+8641b000-8649b000 rw-p 00000000 00:00 0 
+8649b000-864c7000 rw-p 00000000 00:00 0 
+864c7000-864ff000 rw-p 00000000 00:00 0 
+864ff000-88fa0000 rw-p 00000000 00:00 0 
+88fa0000-90fa0000 rw-p 00000000 00:00 0 
+90fa0000-96500000 rw-p 00000000 00:00 0 
+96500000-a6500000 rw-p 00000000 00:00 0 
+a6500000-abc4b000 rw-p 00000000 00:00 0 
+abc4b000-b2d29000 rw-p 00000000 00:00 0 
+b2d29000-b2e00000 ---p 00000000 00:00 0 
+b2e00000-b2e02000 r-xp 00000000 08:08 1291       /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b2e02000-b2e03000 r--p 00001000 08:08 1291       /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b2e03000-b2e04000 rw-p 00002000 08:08 1291       /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b2e04000-b2e07000 r--s 00024000 08:08 782089     /home/dima/Downloads/RubyMine-6.3/lib/jdom.jar
+b2e07000-b2e2c000 r--s 00427000 08:08 782157     /home/dima/Downloads/RubyMine-6.3/lib/util.jar
+b2e2c000-b2e7f000 rw-p 00000000 00:00 0 
+b2e7f000-b2e80000 ---p 00000000 00:00 0 
+b2e80000-b2f00000 rw-p 00000000 00:00 0          [stack:23446]
+b2f00000-b2ff6000 rw-p 00000000 00:00 0 
+b2ff6000-b3000000 ---p 00000000 00:00 0 
+b3000000-b30ed000 rw-p 00000000 00:00 0 
+b30ed000-b3100000 ---p 00000000 00:00 0 
+b3100000-b3102000 r--s 00000000 08:08 264698     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+b3102000-b3104000 r--s 00009000 08:08 782078     /home/dima/Downloads/RubyMine-6.3/lib/hamcrest-core-1.3.jar
+b3104000-b3108000 r--s 00040000 08:08 782106     /home/dima/Downloads/RubyMine-6.3/lib/jsr166e.jar
+b3108000-b310c000 r--s 000f2000 08:08 782095     /home/dima/Downloads/RubyMine-6.3/lib/jna.jar
+b310c000-b311a000 r--s 00351000 08:08 7259       /usr/lib/jvm/java-6-openjdk-common/jre/lib/charsets.jar
+b311a000-b3146000 rw-p 00000000 00:00 0 
+b3146000-b317f000 rw-p 00000000 00:00 0 
+b317f000-b3180000 ---p 00000000 00:00 0 
+b3180000-b3200000 rw-p 00000000 00:00 0          [stack:23445]
+b3200000-b3300000 rw-p 00000000 00:00 0 
+b3300000-b3301000 r--s 00000000 08:08 263550     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+b3301000-b3303000 r--s 00013000 08:08 7267       /usr/lib/jvm/java-6-openjdk-common/jre/lib/jce.jar
+b3303000-b330a000 r--s 00053000 08:08 7253       /usr/lib/jvm/java-6-openjdk-common/jre/lib/resources.jar
+b330a000-b330d000 r--s 00025000 08:08 782071     /home/dima/Downloads/RubyMine-6.3/lib/extensions.jar
+b330d000-b3311000 r--s 0003c000 08:08 7270       /usr/lib/jvm/java-6-openjdk-common/jre/lib/jsse.jar
+b3311000-b3312000 r--s 00009000 08:08 782060     /home/dima/Downloads/RubyMine-6.3/lib/bootstrap.jar
+b3312000-b3315000 r--s 00077000 08:08 7254       /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/localedata.jar
+b3315000-b3317000 r--s 0000f000 08:08 7258       /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/pulse-java.jar
+b3317000-b3318000 r--s 00007000 08:08 206945     /usr/share/java/java-atk-wrapper.jar
+b3318000-b331c000 r--s 00039000 08:08 7255       /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunpkcs11.jar
+b331c000-b333e000 rw-p 00000000 00:00 0 
+b333e000-b333f000 ---p 00000000 00:00 0 
+b333f000-b33bf000 rw-p 00000000 00:00 0          [stack:23444]
+b33bf000-b33c0000 ---p 00000000 00:00 0 
+b33c0000-b3459000 rw-p 00000000 00:00 0          [stack:23443]
+b3459000-b3500000 rw-p 00000000 00:00 0 
+b3500000-b3b08000 rwxp 00000000 00:00 0 
+b3b08000-b6600000 rw-p 00000000 00:00 0 
+b6600000-b660b000 r-xp 00000000 08:08 342741     /lib/i386-linux-gnu/libnss_files-2.15.so
+b660b000-b660c000 r--p 0000a000 08:08 342741     /lib/i386-linux-gnu/libnss_files-2.15.so
+b660c000-b660d000 rw-p 0000b000 08:08 342741     /lib/i386-linux-gnu/libnss_files-2.15.so
+b660d000-b6617000 r-xp 00000000 08:08 342740     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6617000-b6618000 r--p 00009000 08:08 342740     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6618000-b6619000 rw-p 0000a000 08:08 342740     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6619000-b662f000 r-xp 00000000 08:08 342727     /lib/i386-linux-gnu/libnsl-2.15.so
+b662f000-b6630000 r--p 00015000 08:08 342727     /lib/i386-linux-gnu/libnsl-2.15.so
+b6630000-b6631000 rw-p 00016000 08:08 342727     /lib/i386-linux-gnu/libnsl-2.15.so
+b6631000-b6633000 rw-p 00000000 00:00 0 
+b6633000-b663a000 r-xp 00000000 08:08 342742     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b663a000-b663b000 r--p 00006000 08:08 342742     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b663b000-b663c000 rw-p 00007000 08:08 342742     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b663c000-b663f000 r--s 00031000 08:08 7256       /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunjce_provider.jar
+b663f000-b6647000 r-xp 00000000 08:08 10881      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6647000-b6648000 r--p 00007000 08:08 10881      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6648000-b6649000 rw-p 00008000 08:08 10881      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6649000-b6651000 rw-s 00000000 08:08 145057     /tmp/hsperfdata_dima/23441
+b6651000-b6679000 r-xp 00000000 08:08 10893      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b6679000-b667a000 r--p 00027000 08:08 10893      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b667a000-b667c000 rw-p 00028000 08:08 10893      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b667c000-b6683000 r-xp 00000000 08:08 342735     /lib/i386-linux-gnu/librt-2.15.so
+b6683000-b6684000 r--p 00006000 08:08 342735     /lib/i386-linux-gnu/librt-2.15.so
+b6684000-b6685000 rw-p 00007000 08:08 342735     /lib/i386-linux-gnu/librt-2.15.so
+b6685000-b6688000 ---p 00000000 00:00 0 
+b6688000-b66d6000 rw-p 00000000 00:00 0          [stack:23442]
+b66d6000-b66f2000 r-xp 00000000 08:08 265517     /lib/i386-linux-gnu/libgcc_s.so.1
+b66f2000-b66f3000 r--p 0001b000 08:08 265517     /lib/i386-linux-gnu/libgcc_s.so.1
+b66f3000-b66f4000 rw-p 0001c000 08:08 265517     /lib/i386-linux-gnu/libgcc_s.so.1
+b66f4000-b671e000 r-xp 00000000 08:08 342739     /lib/i386-linux-gnu/libm-2.15.so
+b671e000-b671f000 r--p 00029000 08:08 342739     /lib/i386-linux-gnu/libm-2.15.so
+b671f000-b6720000 rw-p 0002a000 08:08 342739     /lib/i386-linux-gnu/libm-2.15.so
+b6720000-b67f8000 r-xp 00000000 08:08 489        /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b67f8000-b67f9000 ---p 000d8000 08:08 489        /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b67f9000-b67fd000 r--p 000d8000 08:08 489        /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b67fd000-b67fe000 rw-p 000dc000 08:08 489        /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b67fe000-b6805000 rw-p 00000000 00:00 0 
+b6805000-b70ed000 r-xp 00000000 08:08 10905      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70ed000-b7134000 r--p 008e7000 08:08 10905      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b7134000-b7148000 rw-p 0092e000 08:08 10905      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b7148000-b7566000 rw-p 00000000 00:00 0 
+b7566000-b757a000 r-xp 00000000 08:08 277232     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b757a000-b757b000 r--p 00013000 08:08 277232     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b757b000-b757c000 rw-p 00014000 08:08 277232     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b757c000-b7720000 r-xp 00000000 08:08 342744     /lib/i386-linux-gnu/libc-2.15.so
+b7720000-b7722000 r--p 001a4000 08:08 342744     /lib/i386-linux-gnu/libc-2.15.so
+b7722000-b7723000 rw-p 001a6000 08:08 342744     /lib/i386-linux-gnu/libc-2.15.so
+b7723000-b7726000 rw-p 00000000 00:00 0 
+b7726000-b7729000 r-xp 00000000 08:08 342743     /lib/i386-linux-gnu/libdl-2.15.so
+b7729000-b772a000 r--p 00002000 08:08 342743     /lib/i386-linux-gnu/libdl-2.15.so
+b772a000-b772b000 rw-p 00003000 08:08 342743     /lib/i386-linux-gnu/libdl-2.15.so
+b772b000-b772f000 r-xp 00000000 08:08 418582     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b772f000-b7730000 r--p 00003000 08:08 418582     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b7730000-b7731000 rw-p 00004000 08:08 418582     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b7731000-b7732000 rw-p 00000000 00:00 0 
+b7732000-b7749000 r-xp 00000000 08:08 342733     /lib/i386-linux-gnu/libpthread-2.15.so
+b7749000-b774a000 r--p 00016000 08:08 342733     /lib/i386-linux-gnu/libpthread-2.15.so
+b774a000-b774b000 rw-p 00017000 08:08 342733     /lib/i386-linux-gnu/libpthread-2.15.so
+b774b000-b774d000 rw-p 00000000 00:00 0 
+b774d000-b774f000 r--s 00001000 08:08 7257       /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/dnsns.jar
+b774f000-b7750000 r--p 002c5000 08:08 146        /usr/lib/locale/locale-archive
+b7750000-b7752000 r--s 00002000 08:08 782059     /home/dima/Downloads/RubyMine-6.3/lib/boot.jar
+b7752000-b7753000 rw-p 00000000 00:00 0 
+b7753000-b7754000 r--p 00000000 00:00 0 
+b7754000-b7760000 r-xp 00000000 08:08 10908      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7760000-b7761000 r--p 0000b000 08:08 10908      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7761000-b7762000 rw-p 0000c000 08:08 10908      /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7762000-b7764000 rw-p 00000000 00:00 0 
+b7764000-b7765000 r-xp 00000000 00:00 0          [vdso]
+b7765000-b7785000 r-xp 00000000 08:08 342734     /lib/i386-linux-gnu/ld-2.15.so
+b7785000-b7786000 r--p 0001f000 08:08 342734     /lib/i386-linux-gnu/ld-2.15.so
+b7786000-b7787000 rw-p 00020000 08:08 342734     /lib/i386-linux-gnu/ld-2.15.so
+bf951000-bf973000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx512m -XX:MaxPermSize=200m -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Djsse.enableSNIExtension=false -XX:+UseCodeCacheFlushing -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -Dawt.useSystemAAFontSettings=lcd -Djb.vmOptionsFile=/home/dima/Downloads/RubyMine-6.3/bin/./rubymine.vmoptions -Xbootclasspath/a:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/boot.jar -Didea.paths.selector=RubyMine60 -Didea.platform.prefix=Ruby -Didea.no.jre.check=true -Djb.restart.code=88 
+java_command: com.intellij.idea.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=/home/dima/Downloads/RubyMine-6.3/bin/./../lib/bootstrap.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/extensions.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/util.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/jdom.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/log4j.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/trove4j.jar:/home/dima/Downloads/RubyMine-6.3/bin/./../lib/jna.jar
+PATH=/usr/local/heroku/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/dima/.rvm/bin:/home/dima/.rvm/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386:/home/dima/Downloads/RubyMine-6.3/bin/.:
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x719790], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x719790], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5bf350], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGXFSZ: [libjvm.so+0x5bf350], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5bf350], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5bf1e0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5bf840], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5bf840], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5bf840], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5bf840], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 12.04 (precise)
+uname:Linux 3.5.0-26-generic #42~precise1-Ubuntu SMP Mon Mar 11 22:19:42 UTC 2013 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 31713, NOFILE 4096, AS infinity
+load average:0.48 0.41 0.37
+
+/proc/meminfo:
+MemTotal:        4075208 kB
+MemFree:          712168 kB
+Buffers:          366708 kB
+Cached:          1311344 kB
+SwapCached:            0 kB
+Active:          2017892 kB
+Inactive:        1127668 kB
+Active(anon):    1333780 kB
+Inactive(anon):   407568 kB
+Active(file):     684112 kB
+Inactive(file):   720100 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+HighTotal:       3227908 kB
+HighFree:         429228 kB
+LowTotal:         847300 kB
+LowFree:          282940 kB
+SwapTotal:      16549872 kB
+SwapFree:       16549776 kB
+Dirty:              1820 kB
+Writeback:             0 kB
+AnonPages:       1467656 kB
+Mapped:           183552 kB
+Shmem:            273840 kB
+Slab:             155820 kB
+SReclaimable:     131300 kB
+SUnreclaim:        24520 kB
+KernelStack:        5304 kB
+PageTables:        19420 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    18587476 kB
+Committed_AS:    4986684 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       22636 kB
+VmallocChunk:      91972 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10232 kB
+DirectMap2M:      903168 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 42
+model name	: Intel(R) Core(TM) i3-2310M CPU @ 2.10GHz
+stepping	: 7
+microcode	: 0x1b
+cpu MHz		: 800.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx lahf_lm arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4190.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 42
+model name	: Intel(R) Core(TM) i3-2310M CPU @ 2.10GHz
+stepping	: 7
+microcode	: 0x1b
+cpu MHz		: 2100.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx lahf_lm arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4190.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 42
+model name	: Intel(R) Core(TM) i3-2310M CPU @ 2.10GHz
+stepping	: 7
+microcode	: 0x1b
+cpu MHz		: 2100.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx lahf_lm arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4190.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 42
+model name	: Intel(R) Core(TM) i3-2310M CPU @ 2.10GHz
+stepping	: 7
+microcode	: 0x1b
+cpu MHz		: 800.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx rdtscp lm constant_tsc arch_perfmon pebs bts xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx lahf_lm arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4190.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 4075208k(712168k free), swap 16549872k(16549776k free)
+
+vm_info: OpenJDK Server VM (23.25-b01) for linux-x86 JRE (1.6.0_30-b30), built on Feb 25 2014 23:09:57 by "buildd" with gcc 4.6.3
+
+time: Fri Jun  6 20:55:56 2014
+elapsed time: 167 seconds
+

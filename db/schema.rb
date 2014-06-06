@@ -11,11 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140606152741) do
-=======
+
 ActiveRecord::Schema.define(version: 20140604184717) do
->>>>>>> master
 
   create_table "calendars", force: true do |t|
     t.string   "provider"
@@ -51,4 +49,5 @@ ActiveRecord::Schema.define(version: 20140604184717) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+end
 end
