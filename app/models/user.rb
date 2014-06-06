@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i},
             uniqueness: {:case_sensitive => false}
   validates :password, :length => {minimum: 6}
+  validate :l_name, presence: true
+  validates :phone, presence: true, format: {with:  /\A[0-9]{10}\Z/}
 
   validates_confirmation_of :password,
                             if: lambda { |m| m.password.present? }
