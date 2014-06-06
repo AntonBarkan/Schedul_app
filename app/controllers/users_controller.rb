@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-
     @user = User.find(params[:id])
-
-    cal = GoogleCalendar::Client.new "688144363652-brriul4ifu7rubps2hspt2c1ujhdth87.apps.googleusercontent.com",
-                                        "ol6yRPwEtD0g_dN94jzNemo0", "http://localhost/oauth2callback"
-
-    if(!cal.nil?)
-      @events = cal.events
-    end
   end
 
   def new
@@ -22,7 +14,10 @@ class UsersController < ApplicationController
 
    def update
      @user = User.find params[:id]
-     @user.update_attributes!(params[user_params])
+     #@user.update_attributes!(params[user_params])
+     User.update(params[:id], :name => 'Hello')
+     @user.update(:name => 'Hello')
+     @user.update(params[:admin])
      flash[:notice] = "#{@user.name} was successfully updated."
      redirect_to showall_path
    end

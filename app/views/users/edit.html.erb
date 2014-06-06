@@ -20,5 +20,9 @@ Edit info about <%= @user.name %>:</br>
     <%= f.radio_button 'shabat', 'yes' %><%= f.label :shabat ,'yes' %>
     <%= f.radio_button 'shabat', 'no' %><%= f.label :shabat ,'no' %>
 
+    <%= f.label :admin, "Is Admin" %>
+    <%= f.radio_button 'admin', 'no' %><%= f.label :admin,'no' %>
+    <%= f.radio_button 'admin', 'yes' %><%= f.label :admin,'yes' %>
+
     <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>
