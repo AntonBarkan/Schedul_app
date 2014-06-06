@@ -20,9 +20,7 @@
 </table>
 
 <br/>
-<% @evnts.each do |evnt| %>
-    <%= evnt.title %>
-<% end %>
+
 <br/>
 
 <%= select_tag 'week', options_for_select(["this week" , "next week"]) %>
