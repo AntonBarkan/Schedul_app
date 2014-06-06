@@ -39,7 +39,7 @@ class UsersController < ApplicationController
      @user = User.new(user_params)
      if @user.save
        flash[:success] = "Welcome to the Schedule App!"
-       sign_in user
+       sign_in @user
        redirect_to @user
      else
        render 'new'

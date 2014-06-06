@@ -9,7 +9,9 @@
         <th><%= usr.name %></th><th><%= usr.l_name %></th><th><%= usr.id_number %></th>
         <th><%= usr.phone %></th><th><%= usr.email %></th>
         <th><%= usr.position %></th><th><%= usr.shabat %></th><th><%= usr.admin %></th>
-        <th><%= link_to 'Edit', edit_user_path(usr)%></th>
+        <% if admin? %>
+            <th><%= link_to 'Edit', edit_user_path(usr)%></th>
+        <% end %>
       </tr>
   <%end%>
 

@@ -9,7 +9,9 @@ ui.js","jrails1/gcal.js","jrails1/jrails.js","jrails1/jquery.validate.js"%>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Show all Users", showall_path%></li>
+          <% if admin? %>
+            <li><%= link_to "Show all Users", showall_path%></li>
+          <% end %>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
               <li id="fat-menu" class="dropdown">
