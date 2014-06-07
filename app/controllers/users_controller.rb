@@ -15,15 +15,15 @@ class UsersController < ApplicationController
 
    def update
      @user = User.find params[:id]
-     #@user.update_attributes(params[update_params])
-     params[:user].delete(:password_digest) if params[:user][:password_digest].blank?
-     params[:user].delete(:remember_token) if params[:user][:remember_token].blank?
-     @user.update_attributes(params[:user])
-     #User.update(params[:id], :name => 'Hello')
-     #@user.update_attribute(:name, params[:name])
-     #@user.update_attribute(:l_name, params[:l_name])
-     #@user.update_attribute(:id_number, params[:id_number])
-     #@user.update_attribute(:name, params[:name])
+     #create function that will do it
+     @user.update_attribute(:name, params[:user][:name])
+     @user.update_attribute(:l_name, params[:user][:l_name])
+     @user.update_attribute(:phone, params[:user][:phone])
+     @user.update_attribute(:email, params[:user][:email])
+     @user.update_attribute(:id_number, params[:user][:id_number])
+     @user.update_attribute(:position, params[:user][:position])
+     @user.update_attribute(:shabat, params[:user][:shabat])
+     @user.update_attribute(:admin, params[:user][:admin])
      flash[:notice] = "#{@user.name} was successfully updated."
      redirect_to showall_path
    end
