@@ -1,0 +1,28 @@
+<table>
+  <tr>
+<<<<<<< HEAD
+    <th>Name</th><th>Last name</th><th>ID number</th><th>Phone number</th><th>Email</th><th>Position</th><th>Shabat</th><th>Admin</th>
+=======
+    <th>Name</th><th>ID number</th><th>Email</th><th>Position</th><th>Shabat</th><th>Admin</th>
+>>>>>>> 70c81f03d7f7540a69db255719ab8a697d7954b5
+    <th></th>
+  </tr>
+  <% @allusrs = User.find(:all)%>
+  <% @allusrs.each do |usr| %>
+      <tr>
+<<<<<<< HEAD
+        <th><%= usr.name %></th><th><%= usr.l_name %></th><th><%= usr.id_number %></th>
+        <th><%= usr.phone %></th><th><%= usr.email %></th>
+        <th><%= usr.position %></th><th><%= usr.shabat %></th><th><%= usr.admin %></th>
+        <% if admin? %>
+            <th><%= link_to 'Edit', edit_user_path(usr)%></th>
+        <% end %>
+=======
+        <th><%= usr.name %></th><th><%= usr.id_number %></th><th><%= usr.email %></th>
+        <th><%= usr.position %></th><th><%= usr.shabat %></th><th><%= usr.admin %></th>
+        <th><%= link_to 'Edit', edit_user_path(usr)%></th>
+>>>>>>> 70c81f03d7f7540a69db255719ab8a697d7954b5
+      </tr>
+  <%end%>
+
+</table>
