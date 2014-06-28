@@ -193,7 +193,7 @@ class UsersController < ApplicationController
 
   def getPartDayArray(day)
     arr = Hash.new
-    submitedHour = SubmitedHour.find_by(:week_start_date =>  DateTime.parse(day), :user_id => current_user.id)
+    submitedHour = SubmitedHour.where(:week_start_date =>  DateTime.parse(day), :user_id => current_user.id)
     if submitedHour.nil?
       7.times do |index|
         set_false_part(arr, index_to_day(index+1))
