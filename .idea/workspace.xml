@@ -14,10 +14,10 @@
     <file path="/Ruby Console" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399658450352" ignored="false" />
     <file path="/user.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1402676185308" ignored="false" />
     <file path="/user_spec.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399727118797" ignored="false" />
-    <file path="/Dummy.txt" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403979888836" ignored="false" />
+    <file path="/Dummy.txt" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403980124349" ignored="false" />
     <file path="/20140509214610_add_index_to_users_email.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399672070512" ignored="false" />
     <file path="/new.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400085892443" ignored="false" />
-    <file path="/users_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403980094746" ignored="false" />
+    <file path="/users_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403980360221" ignored="false" />
     <file path="/custom.css.scss" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403966116755" ignored="false" />
     <file path="/_footer.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399678773082" ignored="false" />
     <file path="/home.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1399679063637" ignored="false" />
@@ -116,7 +116,7 @@
       <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="274" column="25" selection-start="7081" selection-end="7088" vertical-scroll-proportion="0.13127413">
+            <state line="281" column="38" selection-start="7346" selection-end="7346" vertical-scroll-proportion="0.33397684">
               <folding />
             </state>
           </provider>
@@ -1192,7 +1192,11 @@
       <created>1403979890531</created>
       <updated>1403979890531</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="rem">
+      <created>1403980126095</created>
+      <updated>1403980126095</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -1406,7 +1410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="25" selection-start="7081" selection-end="7088" vertical-scroll-proportion="0.13127413">
+        <state line="281" column="38" selection-start="7346" selection-end="7346" vertical-scroll-proportion="0.33397684">
           <folding />
         </state>
       </provider>
