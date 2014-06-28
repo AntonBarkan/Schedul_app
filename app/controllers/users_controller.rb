@@ -224,7 +224,7 @@ class UsersController < ApplicationController
   def getDaysArray(day)
 
 
-    submitedHour = SubmitedHour.find_by(:week_start_date =>  DateTime.parse(day), :user_id => current_user.id)
+    submitedHour = SubmitedHour.find_by(:week_start_date =>  DateTime.parse(day).to_s, :user_id => current_user.id)
 
 
 
