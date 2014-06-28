@@ -280,7 +280,7 @@ class UsersController < ApplicationController
     end
 
     puts '-------------------'
-    puts "in create  #{submitedHour.week_start_date.to_s}"
+    puts "in create  #{hours.week_start_date.to_s}"
     puts '-------------------'
 
     is_part_position = current_user.position == 'part'
