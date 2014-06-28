@@ -279,6 +279,10 @@ class UsersController < ApplicationController
       hours.week_start_date= DateTime.parse(day)
     end
 
+    puts '-------------------'
+    puts "in create  #{submitedHour.week_start_date.to_s}"
+    puts '-------------------'
+
     is_part_position = current_user.position == 'part'
 
     7.times do |index|
