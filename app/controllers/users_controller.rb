@@ -227,7 +227,7 @@ class UsersController < ApplicationController
     submitedHour = SubmitedHour.find_by(:week_start_date =>  Time.parse(day), :user_id => current_user.id)
 
      puts '-------------------'
-    puts "#{submitedHour.week_start_date}"
+    puts "#{submitedHour.week_start_date.to_s}"
     puts '-------------------'
 
     arr = Hash.new
