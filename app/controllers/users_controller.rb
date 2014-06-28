@@ -193,7 +193,7 @@ class UsersController < ApplicationController
 
   def getPartDayArray(day)
     arr = Hash.new
-    submitedHour = SubmitedHour.find_by(:week_start_date =>  Date.parse(day).to_s, :user_id => current_user.id)
+    submitedHour = SubmitedHour.find_by(:week_start_date =>  day, :user_id => current_user.id)
     if submitedHour.nil?
       7.times do |index|
         set_false_part(arr, index_to_day(index+1))
@@ -224,7 +224,7 @@ class UsersController < ApplicationController
   def getDaysArray(day)
 
 
-    submitedHour = SubmitedHour.find_by(:week_start_date =>  Date.parse(day).to_s, :user_id => current_user.id)
+    submitedHour = SubmitedHour.find_by(:week_start_date =>  day, :user_id => current_user.id)
 
 
     arr = Hash.new
@@ -240,7 +240,7 @@ class UsersController < ApplicationController
     end
 
     puts '-------------------'
-    puts "#{submitedHour.week_start_date.to_s}"
+    puts "#{submitedHour.week_start_date}"
     puts '-------------------'
 
     arr['Sunday'] = submitedHour.Sunday_morning
@@ -272,15 +272,15 @@ class UsersController < ApplicationController
 
   def create_events(parsed_string, day)
 
-    hours = SubmitedHour.find_by(:week_start_date =>  Date.parse(day).to_s, :user_id => current_user.id)
+    hours = SubmitedHour.find_by(:week_start_date =>  day, :user_id => current_user.id)
     if (hours.nil?)
       hours = SubmitedHour.create!
       hours.user_id =  current_user.id
-      hours.week_start_date= Date.parse(day).to_s
+      hours.week_start_date= day
     end
 
     puts '-------------------'
-    puts "in create #{Date.parse(day)}  #{  hours.week_start_date}"
+    puts "in create #{day}  #{  hours.week_start_date}"
     puts '-------------------'
 
     is_part_position = current_user.position == 'part'

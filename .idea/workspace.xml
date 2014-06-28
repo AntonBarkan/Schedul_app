@@ -6,14 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/db/migrate/20140531162122_create_calendars.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/db/migrate/20140604184717_create_events.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb" afterPath="$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/scheduling_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/scheduling_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/test.sqlite3" afterPath="$PROJECT_DIR$/db/test.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -47,7 +41,7 @@
     <file path="/env.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400336152031" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/TDD/lib/CapybaraAdapter/coincidence_finder.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400349986199" ignored="false" />
     <file path="/coincidence_finder.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400349941393" ignored="false" />
-    <file path="/fragment.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403987948314" ignored="false" />
+    <file path="/fragment.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403989373694" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/TDD/lib/OntologyHolder/ontology_utils.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400347354257" ignored="false" />
     <file path="/ontology_utils.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1400347353063" ignored="false" />
     <file path="/routes.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403801701056" ignored="false" />
@@ -57,7 +51,7 @@
     <file path="/full_time_table.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403873755769" ignored="false" />
     <file path="/a.dummy" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403972511151" ignored="false" />
     <file path="/_header.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403289597127" ignored="false" />
-    <file path="/scheduling_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403971581442" ignored="false" />
+    <file path="/scheduling_controller.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403989393947" ignored="false" />
     <file path="/users_helper.rb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403973085738" ignored="false" />
     <file path="/show_calendar.html.erb" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403961977395" ignored="false" />
     <file path="/application.css" changelist="c8597cad-47e8-4f0d-a35c-fefd5f02bd29" time="1403907671201" ignored="false" />
@@ -122,6 +116,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="13" selection-start="28" selection-end="32" vertical-scroll-proportion="0.032051284">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="20140621151759_create_submited_hours.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/db/migrate/20140621151759_create_submited_hours.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,10 +143,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scheduling_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="scheduling_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/scheduling_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="41" selection-start="0" selection-end="2791" vertical-scroll-proportion="1.4197531">
+            <state line="10" column="0" selection-start="255" selection-end="255" vertical-scroll-proportion="-2.3548386">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20140621151759_create_submited_hours.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="14" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,9 +197,9 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140628180320_change_column.rb" />
         <option value="$PROJECT_DIR$/app/db/migrate/20140621151759_create_submited_hours.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb" />
         <option value="$PROJECT_DIR$/app/controllers/scheduling_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
       </list>
     </option>
   </component>
@@ -1192,7 +1204,11 @@
       <created>1403987390870</created>
       <updated>1403987390870</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="rem">
+      <created>1403988330012</created>
+      <updated>1403988330012</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -1224,10 +1240,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33966565" sideWeight="0.46417445" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.53582555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33966565" sideWeight="0.56542057" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52492213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47196263" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53582555" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42056075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1312,7 +1328,7 @@
           <option name="timeStamp" value="147" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="162" />
+      <option name="time" value="167" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1357,20 +1373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="119" selection-end="119" vertical-scroll-proportion="0.18595041">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="0" selection-start="7163" selection-end="7163" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/db/migrate/20140607151029_add_new_col_to_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1392,9 +1394,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140621151759_create_submited_hours.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="14" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p545@global/gems/actionpack-4.0.2/lib/action_controller/metal/implicit_render.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.24691358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/submited_hour.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/scheduling_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="41" selection-start="0" selection-end="2791" vertical-scroll-proportion="1.4197531">
+        <state line="10" column="0" selection-start="255" selection-end="255" vertical-scroll-proportion="-2.3548386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="28" selection-end="32" vertical-scroll-proportion="0.032051284">
           <folding />
         </state>
       </provider>

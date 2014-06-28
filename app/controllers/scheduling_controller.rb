@@ -8,7 +8,7 @@ class SchedulingController < ApplicationController
     #submitedHour = SubmitedHour.where(:week_start_date =>  getStartDate)
     #createHash(submitedHour)
     if(request.get?)
-      submitedHour = SubmitedHour.where(:week_start_date =>  @days_of_week[0])
+      submitedHour = SubmitedHour.where(:week_start_date =>  Date.parse(@days_of_week[0]).to_s)
       createHash(submitedHour)
     else
 
@@ -40,11 +40,20 @@ class SchedulingController < ApplicationController
       create_array day_name, @shiftMap
     end
 
-    submited_array.each do |submit|
+
+    if submited_array.kind_of? SubmitedHour
       ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].each do |day_name|
-        create_events submit, day_name, @shiftMap
+        create_events submited_array, day_name, @shiftMap
       end
+    else
+      submited_array.each do |submit|
+        ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].each do |day_name|
+          create_events submit, day_name, @shiftMap
+        end
+      end
+
     end
+
 
   end
 
@@ -75,7 +84,7 @@ class SchedulingController < ApplicationController
   end
 
   def weekdays(week)
-    t = DateTime.now
+    t = Time.now
     t +=   (60*60*24*7) if week == 2
     ans = Hash.new
     temp_t = t.wday
