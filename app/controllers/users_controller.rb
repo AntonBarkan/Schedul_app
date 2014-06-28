@@ -17,13 +17,7 @@ class UsersController < ApplicationController
     @arr1 = current_user.position == 'part' ? getPartDayArray(@days_of_week[0]) :  getDaysArray(@days_of_week[0])
     @arr2 = current_user.position == 'part' ? getPartDayArray(@days_of_week2[0]) :  getDaysArray(@days_of_week2[0])
 
-    @arr1.each do |key, value|
-      puts "#{key}  #{value}"
-    end
 
-    @arr2.each do |key, value|
-      puts "#{key}  #{value}"
-    end
 
   end
 
@@ -100,6 +94,7 @@ class UsersController < ApplicationController
 
     counter = 1
     params['string'].split(';').each do |param|
+      puts "params : #{params['string']}"
       parsed = param.split(':')
       arr = Hash.new
       parsed[1].split('$').each do |day|
@@ -227,7 +222,7 @@ class UsersController < ApplicationController
   end
 
   def getDaysArray(day)
-    puts "#{day}  #{Time.parse(day).to_s}"
+
 
     submitedHour = SubmitedHour.find_by(:week_start_date =>  Time.parse(day), :user_id => current_user.id)
 
@@ -272,7 +267,7 @@ class UsersController < ApplicationController
 
 
   def create_events(parsed_string, day)
-
+    puts "#{day}  #{Time.parse(day).to_s}"
     hours = SubmitedHour.find_by(:week_start_date =>  Time.parse(day), :user_id => current_user.id)
     if (hours.nil?)
       hours = SubmitedHour.create!
@@ -291,6 +286,7 @@ class UsersController < ApplicationController
   end
 
   def set_day(hours, day_of_week, is_part_position, parsed_string)
+    puts " #{day_of_week}  #{parsed_string[day_of_week + (is_part_position ? ' morning' : '')]}"
     hours[day_of_week + '_morning'] = parsed_string[day_of_week + (is_part_position ? ' morning' : '')]
     hours[day_of_week + '_evening'] = parsed_string[day_of_week + (is_part_position ? ' evening' : '')]
     hours[day_of_week + '_night'] = parsed_string[day_of_week + (is_part_position ? ' night' : '')]
