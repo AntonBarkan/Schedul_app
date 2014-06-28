@@ -193,7 +193,7 @@ class UsersController < ApplicationController
 
   def getPartDayArray(day)
     arr = Hash.new
-    submitedHour = SubmitedHour.where(:week_start_date => day, :user_id => current_user.id)
+    submitedHour = SubmitedHour.find_by(:week_start_date =>  Date.parse(day), :user_id => current_user.id)
     if submitedHour.nil?
       7.times do |index|
         set_false_part(arr, index_to_day(index+1))
@@ -224,9 +224,11 @@ class UsersController < ApplicationController
   def getDaysArray(day)
 
 
-    submitedHour = SubmitedHour.find_by(:week_start_date =>  day, :user_id => current_user.id)
+    submitedHour = SubmitedHour.find_by(:week_start_date =>  Date.parse(day), :user_id => current_user.id)
 
-
+    puts '-------------------'
+    puts "#{submitedHour.week_start_date.to_s}"
+    puts '-------------------'
 
     arr = Hash.new
     if submitedHour.nil?
@@ -239,9 +241,6 @@ class UsersController < ApplicationController
       arr['Saturday'] = false
       return arr
     end
-    puts '-------------------'
-    puts "#{submitedHour.week_start_date.to_s}    #{day.to_s}"
-    puts  '-------------------'
 
     arr['Sunday'] = submitedHour.Sunday_morning
     arr['Monday'] = submitedHour.Monday_morning
@@ -272,11 +271,11 @@ class UsersController < ApplicationController
 
   def create_events(parsed_string, day)
 
-    hours = SubmitedHour.find_by(:week_start_date => day, :user_id => current_user.id)
+    hours = SubmitedHour.find_by(:week_start_date =>  Date.parse(day), :user_id => current_user.id)
     if (hours.nil?)
       hours = SubmitedHour.create!
       hours.user_id =  current_user.id
-      hours.week_start_date= day
+      hours.week_start_date= Date.parse(day)
     end
 
     is_part_position = current_user.position == 'part'
@@ -330,7 +329,7 @@ def getStartDate
     month = 6
     year = 2014
 
-    day_start = DateTime.now.change({:year => year, :month => month, :day => day , :hour => 0 ,  :min => 0 ,  :sec => 0  })
+    day_start = Time.now.change({:year => year, :month => month, :day => day , :hour => 0 ,  :min => 0 ,  :sec => 0  })
     day_start
   end
 
