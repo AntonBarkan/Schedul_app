@@ -239,6 +239,9 @@ class UsersController < ApplicationController
       arr['Saturday'] = false
       return arr
     end
+    puts '-------------------'
+    puts "#{submitedHour.week_start_date.to_s}    #{Time.parse(day).to_s}"
+    puts  '-------------------'
 
     arr['Sunday'] = submitedHour.Sunday_morning
     arr['Monday'] = submitedHour.Monday_morning
