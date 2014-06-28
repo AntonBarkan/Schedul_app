@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628180320) do
-
-  create_table "calendars", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "events", force: true do |t|
-    t.string   "name"
-    t.datetime "start_at"
-    t.datetime "end_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140627212720) do
 
   create_table "shifts", force: true do |t|
     t.datetime "week_number"
@@ -36,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140628180320) do
   end
 
   create_table "submited_hours", force: true do |t|
-    t.date     "week_start_date"
+    t.string   "week_start_date"
     t.integer  "user_id"
     t.boolean  "Sunday_morning"
     t.boolean  "Sunday_evening"
