@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627212720) do
+ActiveRecord::Schema.define(version: 20140628180320) do
 
   create_table "calendars", force: true do |t|
     t.string   "provider"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140627212720) do
   end
 
   create_table "submited_hours", force: true do |t|
-    t.time     "week_start_date"
+    t.date     "week_start_date"
     t.integer  "user_id"
     t.boolean  "Sunday_morning"
     t.boolean  "Sunday_evening"
