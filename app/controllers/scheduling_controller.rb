@@ -8,7 +8,7 @@ class SchedulingController < ApplicationController
     #submitedHour = SubmitedHour.where(:week_start_date =>  getStartDate)
     #createHash(submitedHour)
     if(request.get?)
-      submitedHour = SubmitedHour.where(:week_start_date =>  Date.parse(@days_of_week[0]).to_s)
+      submitedHour = SubmitedHour.where(:week_start_date =>  @days_of_week[0])
       createHash(submitedHour)
     else
 
