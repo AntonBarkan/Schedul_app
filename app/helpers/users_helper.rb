@@ -1,8 +1,6 @@
 module UsersHelper
 
   def getClass(day, week)
-    puts "#{day}   #{week}"
-
     self.instance_eval("@arr#{week.to_s}")[day]  ?'selectedCell':''
   end
 
