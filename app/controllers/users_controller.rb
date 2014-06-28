@@ -226,6 +226,9 @@ class UsersController < ApplicationController
 
     submitedHour = SubmitedHour.find_by(:week_start_date =>  Time.parse(day), :user_id => current_user.id)
 
+     puts '-------------------'
+    puts "#{submitedHour.week_start_date}"
+    puts '-------------------'
 
     arr = Hash.new
     if submitedHour.nil?
@@ -267,7 +270,7 @@ class UsersController < ApplicationController
 
 
   def create_events(parsed_string, day)
-    puts "#{day}  #{Time.parse(day).to_s}"
+
     hours = SubmitedHour.find_by(:week_start_date =>  Time.parse(day), :user_id => current_user.id)
     if (hours.nil?)
       hours = SubmitedHour.create!
@@ -280,6 +283,8 @@ class UsersController < ApplicationController
     7.times do |index|
       set_day(hours, index_to_day(index+1), is_part_position, parsed_string)
     end
+
+
 
     hours.save!
 
