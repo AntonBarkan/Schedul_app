@@ -272,7 +272,7 @@ class UsersController < ApplicationController
 
   def create_events(parsed_string, day)
 
-    hours = SubmitedHour.=(:week_start_date =>  DateTime.parse(day).to_s, :user_id => current_user.id)
+    hours = SubmitedHour.find_by(:week_start_date =>  DateTime.parse(day).to_s, :user_id => current_user.id)
     if (hours.nil?)
       hours = SubmitedHour.create!
       hours.user_id =  current_user.id
