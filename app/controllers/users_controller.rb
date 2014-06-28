@@ -17,7 +17,13 @@ class UsersController < ApplicationController
     @arr1 = current_user.position == 'part' ? getPartDayArray(@days_of_week[0]) :  getDaysArray(@days_of_week[0])
     @arr2 = current_user.position == 'part' ? getPartDayArray(@days_of_week2[0]) :  getDaysArray(@days_of_week2[0])
 
+    @arr1.each do |key, value|
+      puts "#{key}  #{value}"
+    end
 
+    @arr2.each do |key, value|
+      puts "#{key}  #{value}"
+    end
 
   end
 
