@@ -5,7 +5,6 @@ ruby '1.9.3'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
-gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth', '1.1.0'
 
 group :development, :test do
