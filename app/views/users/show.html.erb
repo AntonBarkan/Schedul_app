@@ -1,17 +1,15 @@
 <%= @user.name %>, <%= @user.email %>
 
-<br/>
-<br/>
-
-<%= select_tag 'week', options_for_select(["this week" , "next week"]) %>
-
-<%= render :file => 'users/full_time_table.html.erb' %>
 
 
-<br/>
+<% if @user.position == 'full' %>
+    <%= render :file => 'users/full_time_table.html.erb' %>
 
-<%= render :file => 'users/part_time_table.html.erb' %>
+<% else %>
 
+
+    <%= render :file => 'users/part_time_table.html.erb' %>
+<% end %>
 
 
 

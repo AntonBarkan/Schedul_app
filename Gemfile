@@ -5,6 +5,8 @@ ruby '1.9.3'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'google-api-client', :require => 'google/api_client'
+gem 'omniauth', '1.1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -12,7 +14,6 @@ group :development, :test do
   gem 'guard-rspec', '2.5.0'
   gem 'factory_girl'
   gem 'factory_girl_rails'
-  #gem 'thoughtbot-factory_girl'
 end
 
 group :test do
@@ -23,7 +24,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
-
 
   # OS X: раскомментируйте эти строки.
   # gem 'growl', '1.0.3'

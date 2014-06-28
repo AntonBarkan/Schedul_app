@@ -160,3 +160,255 @@ table
   background-color: green;
 }
 
+.zui-table {
+  border: none;
+  border-right: solid 1px #DDEFEF;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+.zui-table thead th {
+  background-color: #DDEFEF;
+  border: none;
+  color: #336B6B;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+}
+
+.zui-table .header {
+  background-color: blue;
+  color: white;
+}
+.zui-table tbody td {
+  border-bottom: solid 1px #DDEFEF;
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+  border: none;
+}
+
+.zui-table-col-odd {
+  background-color: aliceblue;
+}
+.zui-table-col-even {
+  background-color: #FFF;
+}
+
+.zui-wrapper {
+  position: relative;
+}
+.zui-scroller {
+  margin-left: 141px;
+  overflow-x: auto;
+
+
+}
+
+
+.zui-table .zui-sticky-col {
+  left: 0;
+  position: absolute;
+  top: auto;
+  width: 120px;
+}
+
+
+//-----------------------
+.sBase {
+  OVERFLOW: hidden; WIDTH: 100%; POSITION: relative; HEIGHT: 100%
+}
+.sHeader {
+  Z-INDEX: 3; POSITION: absolute; BACKGROUND-COLOR: #ffffff
+}
+.sHeaderInner {
+  POSITION: relative
+}
+.sHeaderInner TABLE {
+  TABLE-LAYOUT: fixed! important; WIDTH: 1px! important;
+  //BORDER-COLLAPSE: collapse! important;
+  BACKGROUND-COLOR: #ffffff;
+  //border-spacing: 0px 0px
+}
+.sFHeader {
+  Z-INDEX: 4; OVERFLOW: hidden; POSITION: absolute
+}
+.sFHeader TABLE {
+  TABLE-LAYOUT: fixed! important; WIDTH: 1px! important;
+  //BORDER-COLLAPSE: collapse! important;
+  BACKGROUND-COLOR: #ffffff;
+  //border-spacing: 0px 0px
+}
+.sData {
+  Z-INDEX: 2; OVERFLOW: auto; POSITION: absolute; BACKGROUND-COLOR: #ffffff
+}
+.sData TABLE {
+  TABLE-LAYOUT: fixed! important; WIDTH: 1px! important;
+}
+.sFData {
+  Z-INDEX: 1; POSITION: absolute; BACKGROUND-COLOR: #ffffff
+}
+.sFDataInner {
+  POSITION: relative
+}
+.sFData TABLE {
+  TABLE-LAYOUT: fixed! important; WIDTH: 1px! important;
+}
+.sDefault {
+ // PADDING-RIGHT: 0px; PADDING-LEFT: 0px;
+  //FONT-SIZE: 0.8em;
+  //PADDING-BOTTOM: 0px;
+  MARGIN: 0px;
+  //BORDER-TOP-STYLE: none;
+  //PADDING-TOP: 0px;
+  //FONT-FAMILY: Verdana, Arial, sans serif;
+}
+.sDefault TH {
+  //BORDER-RIGHT: #cccccc 1px solid;
+  //PADDING-RIGHT: 6px;
+  //BORDER-TOP: #cccccc 1px solid;
+  //PADDING-LEFT: 4px;
+  //PADDING-BOTTOM: 3px;
+  //BORDER-LEFT: #cccccc 1px solid;
+  //PADDING-TOP: 3px;
+  //BORDER-BOTTOM: #cccccc 1px solid;
+  WHITE-SPACE: nowrap
+}
+.sDefault TD {
+  BORDER-RIGHT: #cccccc 0px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #cccccc 0px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #cccccc 0px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #cccccc 0px solid; WHITE-SPACE: nowrap
+}
+.sDefault TH {
+  BORDER-LEFT-COLOR: #c5c5c5; BORDER-BOTTOM-COLOR: #c5c5c5; BORDER-TOP-COLOR: #c5c5c5; BACKGROUND-COLOR: #e5e5e5; BORDER-RIGHT-COLOR: #c5c5c5
+}
+.sDefault-Fixed {
+  BORDER-LEFT-COLOR: #c5c5c5; BORDER-BOTTOM-COLOR: #c5c5c5; BORDER-TOP-COLOR: #c5c5c5; BACKGROUND-COLOR: #eeeeee; BORDER-RIGHT-COLOR: #c5c5c5
+}
+.sSky {
+  //PADDING-RIGHT: 0px; PADDING-LEFT: 0px;
+  //FONT-SIZE: 0.8em;
+  //PADDING-BOTTOM: 0px;
+  MARGIN: 0px; BORDER-TOP-STYLE: none;
+  //PADDING-TOP: 0px;
+  //FONT-FAMILY: Verdana, Arial, sans serif;
+  BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.sSky TH {
+  BORDER-RIGHT: #89BCCC 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #89BCCC 0px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #89BCCC 0px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #89BCCC 1px solid; WHITE-SPACE: nowrap
+}
+.sSky TD {
+  BORDER-RIGHT: #89BCCC 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #89BCCC 0px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #89BCCC 0px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #89BCCC 1px solid; WHITE-SPACE: nowrap
+}
+.sSky TH {
+  background-color: blue;
+  color: white;
+}
+
+.sOrange {
+  //PADDING-RIGHT: 0px; PADDING-LEFT: 0px;
+  //FONT-SIZE: 0.8em;
+  //PADDING-BOTTOM: 0px;
+  MARGIN: 0px; BORDER-TOP-STYLE: none;
+  //PADDING-TOP: 0px;
+  //FONT-FAMILY: Verdana, Arial, sans serif;
+  BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.sOrange TH {
+  BORDER-RIGHT: #cebb9e 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #cebb9e 1px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #cebb9e 1px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #cebb9e 1px solid; WHITE-SPACE: nowrap
+}
+.sOrange TD {
+  BORDER-RIGHT: #cebb9e 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #cebb9e 0px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #cebb9e 1px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #cebb9e 1px solid; WHITE-SPACE: nowrap
+}
+
+.sDark {
+  //PADDING-RIGHT: 0px; PADDING-LEFT: 0px;
+  //FONT-SIZE: 0.8em;
+  //PADDING-BOTTOM: 0px;
+  MARGIN: 0px; COLOR: #ffffff; BORDER-TOP-STYLE: none;
+  //PADDING-TOP: 0px;
+  //FONT-FAMILY: Verdana, Arial, sans serif;
+  BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.sDark TH {
+  BORDER-RIGHT: #555555 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #555555 1px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #555555 1px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #555555 1px solid; WHITE-SPACE: nowrap
+}
+.sDark TD {
+  BORDER-RIGHT: #555555 1px solid;
+  //PADDING-RIGHT: 6px;
+  BORDER-TOP: #555555 0px solid;
+  //PADDING-LEFT: 4px; PADDING-BOTTOM: 3px;
+  BORDER-LEFT: #555555 1px solid;
+  //PADDING-TOP: 3px;
+  BORDER-BOTTOM: #555555 1px solid; WHITE-SPACE: nowrap
+}
+
+.fakeContainer {
+  //PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px;
+  MARGIN: 20px; OVERFLOW: hidden;
+  BORDER-TOP-STYLE: none;
+  //PADDING-TOP: 0px;
+  BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 340px; BORDER-BOTTOM-STYLE: none;
+  //border:1px solid #8DBFCF;
+}
+
+.demoTable tbody td {
+  border-bottom: solid 1px #DDEFEF;
+
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+  border: none;
+}
+
+.demoTable tbody th {
+  border-bottom: solid 1px #DDEFEF;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+  border: none;
+  font: normal 13px Arial, sans-serif;
+}
+
+.demoTable {
+  font: normal 13px Arial, sans-serif;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+

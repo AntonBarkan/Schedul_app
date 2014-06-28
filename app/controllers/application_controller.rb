@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def current_user
-    @current_calendar ||= Calendar.find(session[:calendar_id]) if session[:calendar_id]
-  end
+  #def current_user
+  #  @current_calendar ||= Calendar.find(session[:calendar_id]) if session[:calendar_id]
+  #end
 
 end

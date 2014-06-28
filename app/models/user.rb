@@ -1,14 +1,18 @@
 class User < ActiveRecord::Base
 
-	validates :name, presence: true , length: { minimum: 6, maximum: 50 }
+  has_many :submited_hours
+
+	validates :name, presence: true , length: { minimum: 4, maximum: 50 }
 	validates :email, presence: true, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i},
             uniqueness: {:case_sensitive => false}
   validates :password, :length => {minimum: 6}
+  validate :l_name, presence: true
+  validates :phone, presence: true, format: {with:  /\A[0-9]{10}\Z/}
 
   validates_confirmation_of :password,
                             if: lambda { |m| m.password.present? }
 
-  before_save {self.admin = 'no'}
+  before_create {self.admin = 'no'}
   before_save {self.email = email.downcase}
   before_create :create_remember_token
 

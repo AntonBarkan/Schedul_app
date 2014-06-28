@@ -1,0 +1,67 @@
+<% if !admin? %>
+    <script type="text/javascript">
+        window.location.href='/'
+    </script>
+<% end %>
+
+<div class="container">
+  <div class="fakeContainer">
+    <table id = 'allUsersTable' class="demoTable">
+
+      <TBODY>
+
+      <tr>
+        <th >Name</th>
+        <th >Last name</th>
+        <th >ID number</th>
+        <th >Phone number</th>
+        <th >Email</th>
+        <th >Position</th>
+        <th >Shabat</th>
+        <th >Admin</th>
+        <th >View user schedule</th>
+        <th >Edit</th>
+        <th >Remove</th>
+      </tr>
+      <% @allUsers = User.all%>
+      <% @allUsers.each do |usr| %>
+          <tr>
+            <td><%= usr.name %></td>
+            <td><%= usr.l_name %></td>
+            <td><%= usr.id_number %></td>
+            <td><%= usr.phone %></td>
+            <td><%= usr.email %></td>
+            <td><%= usr.position %></td>
+            <td><%= usr.shabat %></td>
+            <td><%= usr.admin %></td>
+            <% if admin? %>
+                <td><%=link_to 'View schedule', user_path(usr) %></td>
+                <td><%= link_to 'Edit', edit_user_path(usr)%></td>
+                <td><%= link_to 'Remove ', user_path(usr), method: :delete, :confirm => 'Are you sure?'%></td>
+            <% end %>
+          </tr>
+      <%end%>
+      </TBODY>
+    </table>
+  </div>
+  <SCRIPT type=text/javascript>
+      //<![CDATA[
+
+      (function() {
+          var mySt = new superTable("allUsersTable", {
+              cssSkin : "sSky",
+              fixedCols : 1,
+              headerRows : 1,
+              onStart : function () {
+                  this.start = new Date();
+              },
+              onFinish : function () {
+                  document.getElementById("testDiv").innerHTML += "Finished...<br>" + ((new Date()) - this.start) + "ms.<br>";
+              }
+          });
+      })();
+
+      //]]>
+  </SCRIPT>
+</div>
+

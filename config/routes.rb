@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
-  get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  #get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "users/new"
+  get "scheduling/show"
 
 
   resources :users
@@ -12,14 +13,23 @@ SampleApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  match '/settings', to: 'users#settings',      via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/showall', to: 'static_pages#showall', via: 'get'
-  #match "/auth/:provider/callback" => "sessions#login"
 
-  #get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar,
-  #      :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  match '/scheduling', to: 'scheduling#show', via: 'get'
+  match '/scheduling', to: 'scheduling#show', via: 'post'
+  match '/scheduling', to: 'scheduling#update', via: 'post'
+
+
+  match '/full_position', to: 'users#full_time_table', via: 'get'
+  match '/part_position', to: 'users#part_time_table', via: 'get'
+  match '/allschedule', to: 'users#allschedule', via: 'get'
+  match '/calendar', to: 'users#show_calendar', via: 'get'
+  match '/chng_pass', to: 'users#change_password', via: 'get'
+
 
   #------------ajax calls
   post '/ajax/submit'      => 'users#submit'

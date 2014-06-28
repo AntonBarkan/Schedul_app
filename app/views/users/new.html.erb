@@ -6,11 +6,17 @@
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages' %>
 
-        <%= f.label :name %>
+        <%= f.label :name, "First name" %>
         <%= f.text_field :name %>
+
+        <%= f.label :l_name, "Last name" %>
+        <%= f.text_field :l_name %>
 
         <%= f.label :id_number %>
         <%= f.text_field :id_number %>
+
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
 
         <%= f.label :email %>
         <%= f.text_field :email %>
@@ -18,20 +24,20 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.label :password_confirmation, "Password Confirmation" %>
         <%= f.password_field :password_confirmation %>
 
         <%= f.label :position, 'Position - full/part' %>
-        <%= f.radio_button 'position', 'full' %><%= f.label :position ,'full' %>
+        <%= f.radio_button 'position', 'full', :checked => true %><%= f.label :position ,'full' %>
         <%= f.radio_button 'position', 'part' %><%= f.label :position ,'part' %>
 
         <%= f.label :shabat, "Working on shabat or not" %>
-        <%= f.radio_button 'shabat', 'yes' %><%= f.label :shabat ,'yes' %>
+        <%= f.radio_button 'shabat', 'yes', :checked => true %><%= f.label :shabat ,'yes' %>
         <%= f.radio_button 'shabat', 'no' %><%= f.label :shabat ,'no' %>
 
 
-        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Create new user", class: "btn btn-large btn-primary" %>
     <% end %>
-    <p>Have account? <%= link_to "Sign in now!", signin_path %></p>
+
   </div>
 </div>

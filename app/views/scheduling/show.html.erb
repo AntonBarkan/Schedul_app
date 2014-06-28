@@ -1,0 +1,357 @@
+
+<%= form_tag("/scheduling", method: "post") do %>
+
+    <div class="zui-wrapper">
+    <div class="zui-scroller">
+<table id="sh_table" class="zui-table">
+<colgroup>
+
+  <col class="zui-table-col-even"/>
+  <col class="zui-table-col-odd"/>
+  <col class="zui-table-col-even"/>
+  <col class="zui-table-col-odd"/>
+  <col class="zui-table-col-even"/>
+  <col class="zui-table-col-odd"/>
+  <col class="zui-table-col-even"/>
+  <col class="zui-table-col-odd"/>
+
+</colgroup>
+
+
+<tr>
+  <td class="zui-sticky-col" style="border: 0;"></td>
+  <td class="header">Sunday, <%= @days_of_week[0] %></td>
+  <td class="header">Monday, <%= @days_of_week[1] %></td>
+  <td class="header">Tuesday, <%= @days_of_week[2] %></td>
+  <td class="header">Wednesday, <%= @days_of_week[3] %></td>
+  <td class="header">Thursday, <%= @days_of_week[4] %></td>
+  <td class="header">Friday, <%= @days_of_week[5] %></td>
+  <td class="header">Saturday, <%= @days_of_week[6] %></td>
+</tr>
+
+  
+     <tr>
+    <td class="zui-sticky-col">Morning<p> 07:00 - 15:00</p></td>
+    <td>
+
+      <ul class="unstyled">
+
+
+          <% @shiftMap['Sunday_morning'].each do |element| %>
+
+              <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Sunday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Sunday_morning_check_box_'+element[2].to_s,  element[1], checked = element[1])  %>
+
+                </span>
+              </li>
+          <% end %>
+      </ul>
+    </td>
+
+    <td>
+      <ul class="unstyled">
+
+        <table>
+        <% @shiftMap['Monday_morning'].each do |element| %>
+
+              <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Monday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Monday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+              </li>
+        <% end %>
+        </table>
+      </ul>
+    </td>
+
+    <td>
+      <ul class="unstyled">
+        <% @shiftMap['Tuesday_morning'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Tuesday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Tuesday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+
+    <td>
+      <ul class="unstyled">
+        <% @shiftMap['Wednesday_morning'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Wednesday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Wednesday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+
+    <td>
+      <ul class="unstyled">
+        <% @shiftMap['Thursday_morning'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Thursday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Thursday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Friday_morning'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Friday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Friday_morning_check_box_'+element[2].to_s, element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Saturday_morning'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Saturday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Saturday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+  </tr>
+
+
+
+  <tr>
+    <td class="zui-sticky-col">Evening<p>15:00 - 23:00</p></td>
+    <td>
+      <ul class="unstyled">
+          <% @shiftMap['Sunday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Sunday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Sunday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+          <% end %>
+      </ul>
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Monday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Monday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Monday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Tuesday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Tuesday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Tuesday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Wednesday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Wednesday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Wednesday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+
+      <ul class="unstyled">
+        <% @shiftMap['Thursday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Thursday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Thursday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+
+      <ul class="unstyled">
+        <% @shiftMap['Friday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Friday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Friday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Saturday_evening'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Saturday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Saturday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+  </tr>
+
+
+  <tr>
+    <td class="zui-sticky-col">Night<p> 23:00 - 07:00</p></td>
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Sunday_night'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Sunday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Sunday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Monday_night'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Monday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Monday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Tuesday_night'].each do |element| %>
+            <li><%= element %></li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Wednesday_night'].each do |element| %>
+            <li><%= element %></li>
+        <% end %>
+      </ul>
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+        <% @shiftMap['Thursday_night'].each do |element| %>
+            <li><%= element %></li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+
+        <% @shiftMap['Friday_night'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Friday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Friday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+
+    <td>
+
+      <ul class="unstyled">
+
+        <% @shiftMap['Saturday_night'].each do |element| %>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Saturday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Saturday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                </span>
+            </li>
+        <% end %>
+      </ul>
+
+    </td>
+  </tr>
+
+</table>
+</div>
+    </div>
+
+
+<br/>
+
+<div style="text-align:center">
+<%= submit_tag("update", :class =>"btn btn-large btn-primary") %>
+
+</div>
+
+<% end %>
+
