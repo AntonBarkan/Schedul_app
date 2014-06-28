@@ -1,7 +1,7 @@
 class CreateSubmitedHours < ActiveRecord::Migration
   def change
     create_table :submited_hours do |t|
-      t.datetime :week_start_date
+      t.string :week_start_date
       t.integer :user_id
       t.boolean :Sunday_morning
       t.boolean :Sunday_evening
