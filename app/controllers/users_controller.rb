@@ -111,7 +111,7 @@ class UsersController < ApplicationController
   end
 
   def weekdays(week)
-    t = DateTime.now
+    t = Time.now
     t +=   (60*60*24*7) if week == 2
     ans = Hash.new
     temp_t = t.wday
