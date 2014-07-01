@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20140627212720) do
 
   create_table "shifts", force: true do |t|
-    t.datetime "week_number"
-    t.string   "shift_name"
-    t.integer  "user_id"
+    t.string  "week_number"
+    t.string  "shift_name"
+    t.integer "user_id"
   end
 
   create_table "submited_hours", force: true do |t|

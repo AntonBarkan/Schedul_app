@@ -158,6 +158,7 @@ table
 .selectedCell
 {
   background-color: green;
+  color: white;
 }
 
 .zui-table {
@@ -178,6 +179,10 @@ table
 }
 
 .zui-table .header {
+  background-color: blue;
+  color: white;
+}
+ .header {
   background-color: blue;
   color: white;
 }

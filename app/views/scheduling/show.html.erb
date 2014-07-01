@@ -1,6 +1,7 @@
 
 <%= form_tag("/scheduling", method: "post") do %>
 
+
     <div class="zui-wrapper">
     <div class="zui-scroller">
 <table id="sh_table" class="zui-table">
@@ -59,7 +60,7 @@
               <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Monday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Monday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Monday_morning_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
               </li>
         <% end %>
@@ -73,7 +74,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Tuesday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Tuesday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Tuesday_morning_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -86,7 +87,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Wednesday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Wednesday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Wednesday_morning_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -99,7 +100,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Thursday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Thursday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Thursday_morning_check_box_'+element[2].to_s,  element[1],checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -113,7 +114,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Friday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Friday_morning_check_box_'+element[2].to_s, element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Friday_morning_check_box_'+element[2].to_s, element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -128,7 +129,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Saturday_morning_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Saturday_morning_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Saturday_morning_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -147,7 +148,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Sunday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Sunday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Sunday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
           <% end %>
@@ -161,7 +162,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Monday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Monday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Monday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -175,7 +176,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Tuesday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Tuesday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Tuesday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -190,7 +191,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Wednesday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Wednesday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Wednesday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -206,7 +207,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Thursday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Thursday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Thursday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -222,7 +223,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Friday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Friday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Friday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -237,7 +238,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Saturday_evening_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Saturday_evening_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Saturday_evening_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -256,7 +257,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Sunday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Sunday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Sunday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -271,7 +272,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Monday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Monday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Monday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -283,7 +284,12 @@
 
       <ul class="unstyled">
         <% @shiftMap['Tuesday_night'].each do |element| %>
-            <li><%= element %></li>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Tuesday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Tuesday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
+                </span>
+            </li>
         <% end %>
       </ul>
 
@@ -293,7 +299,12 @@
 
       <ul class="unstyled">
         <% @shiftMap['Wednesday_night'].each do |element| %>
-            <li><%= element %></li>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Wednesday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Wednesday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
+                </span>
+            </li>
         <% end %>
       </ul>
     </td>
@@ -302,7 +313,12 @@
 
       <ul class="unstyled">
         <% @shiftMap['Thursday_night'].each do |element| %>
-            <li><%= element %></li>
+            <li>
+                <span style="display: inline;white-space: nowrap;">
+                  <label style="display: inline; white-space: nowrap;" for= <%='Thursday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
+                  <%= check_box_tag('Thursday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
+                </span>
+            </li>
         <% end %>
       </ul>
 
@@ -316,7 +332,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Friday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Friday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Friday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>
@@ -332,7 +348,7 @@
             <li>
                 <span style="display: inline;white-space: nowrap;">
                   <label style="display: inline; white-space: nowrap;" for= <%='Saturday_night_check_box_'+element[2].to_s%> ><%= element[0] %></label>
-                  <%= check_box_tag('Saturday_night_check_box_'+element[2].to_s,  element[1], {checked: element[1] }) %>
+                  <%= check_box_tag('Saturday_night_check_box_'+element[2].to_s,  element[1], checked = element[1]) %>
                 </span>
             </li>
         <% end %>

@@ -1,28 +1,37 @@
-<table>
+<div class="row">
+  <div class="span6 offset3" style="text-align: center">
+
+
+<table align="center" style="text-align: left;border: 0;" >
   <tr>
-    <th>Name:</th>    <th><%= @user.name %></br></th>
+    <th style="border: 0;">Name:</th>    <th style="border: 0;"><%= @user.name %></br></th>
   </tr>
   <tr>
-    <th>Last name:</th>    <th><%= @user.l_name %></br></th>
+    <th style="border: 0;">Last name:</th>    <th style="border: 0;"><%= @user.l_name %></br></th>
   </tr>
   <tr>
-    <th>ID:</th>    <th><%= @user.id_number%></th>
+    <th style="border: 0;">ID:</th>    <th style="border: 0;"><%= @user.id_number%></th>
   </tr>
   <tr>
-    <th>Phone number:</th>    <th><%= @user.phone %></br></th>
+    <th style="border: 0;">Phone number:</th>    <th style="border: 0;"><%= @user.phone %></br></th>
   </tr>
   <tr>
-    <th>Email:</th>    <th><%= @user.email %></th>
+    <th style="border: 0;">Email:</th>    <th style="border: 0;"><%= @user.email %></th>
   </tr>
   <tr>
-    <th>Position:</th>    <th><%= @user.position %></th>
+    <th style="border: 0;">Position:</th>    <th style="border: 0;"><%= @user.position %></th>
   </tr>
   <tr>
-    <th>Working on shabat:</th>    <th><%= @user.shabat %></th>
+    <th style="border: 0;">Working on shabat:</th>    <th style="border: 0;"><%= @user.shabat %></th>
   </tr>
   <tr>
-    <th>Admin:</th> <th><%= @user.admin %></th>
+    <th style="border: 0;">Admin:</th> <th style="border: 0;"><%= @user.admin %></th>
   </tr>
 </table>
 
+  <br/>
 <%= link_to 'Change password', chng_pass_path %>
+
+
+  </div>
+</div>

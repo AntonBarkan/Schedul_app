@@ -7,14 +7,21 @@ class SchedulingController < ApplicationController
     @days_of_week2 = weekdays(2)
     #submitedHour = SubmitedHour.where(:week_start_date =>  getStartDate)
     #createHash(submitedHour)
-    if(request.get?)
-      submitedHour = SubmitedHour.where(:week_start_date =>  @days_of_week[0])
-      createHash(submitedHour)
-    else
-
+    submitedHour = SubmitedHour.where(:week_start_date =>  @days_of_week[0])
+    createHash(submitedHour)
+    if(request.post?)
       save_to_db
     end
 
+	
+    #submitedHour = SubmitedHour.where(:week_start_date =>  getStartDate)
+    #  createHash(submitedHour)
+    #if(request.post?)
+    # save_to_db
+    #end
+    if alreadyExistRecords?
+      loadFromDB
+    end
   end
 
   def save_to_db
@@ -66,15 +73,15 @@ class SchedulingController < ApplicationController
   def create_events(record, day_name, hash_map )    #TODO move user to called method?
     user = User.find(record.user_id)
     if record.method(:"#{day_name}_morning").call == true
-      hash_map[ day_name + '_morning' ] << [user.name + ' ' + user.l_name, false , user.id ]
+      hash_map[ day_name + '_morning' ] << [(user.name.nil? ? '':user.name) + ' ' + (user.l_name.nil? ? '':user.l_name), false , user.id ]
     end
 
     if record.method(:"#{day_name}_evening").call == true
-      hash_map[ day_name + '_evening' ] << [user.name + ' ' + user.l_name, false , user.id]
+      hash_map[ day_name + '_evening' ] << [(user.name.nil? ? '':user.name) + ' ' + (user.l_name.nil? ? '':user.l_name), false , user.id ]
     end
 
     if record.method(:"#{day_name}_night").call == true
-      hash_map[ day_name + '_night' ] << [user.name + ' ' + user.l_name, false , user.id]
+      hash_map[ day_name + '_night' ] << [(user.name.nil? ? '':user.name) + ' ' + (user.l_name.nil? ? '':user.l_name), false , user.id ]
     end
 
   end
@@ -105,6 +112,8 @@ class SchedulingController < ApplicationController
   end
 
   def proccess_shifts(arr)
+    startDate = getStartDate
+    Shifts.where(:week_number => getStartDate).destroy_all
     arr.each do |temp|
       shift_info = temp.split('_')
       day = shift_info[0].to_s
@@ -112,7 +121,7 @@ class SchedulingController < ApplicationController
       worker = shift_info[4].to_i
       #Shifts.create(:name => day + '_' + time, :worker => worker)
       new_shift = Shifts.create!
-      new_shift.week_number = getStartDate
+      new_shift.week_number = Time.now.strftime("%U").to_s
       new_shift.shift_name = day+'_'+time
       new_shift.user_id = worker
       new_shift.save!
@@ -120,5 +129,25 @@ class SchedulingController < ApplicationController
 
   end
 
+  def alreadyExistRecords?
+    Shifts.where(:week_number => Time.now.strftime("%U").to_s) != nil
+  end
+
+  def loadFromDB
+    #@shiftMap = Hash.new
+    allshifts = Shifts.where(:week_number => Time.now.strftime("%U").to_s)
+    if allshifts == nil
+      return
+    end
+
+    allshifts.each do |shift|
+      arr = @shiftMap["#{shift.shift_name}"]
+        arr.each do |tempArr|
+          if(tempArr[2] == shift.user_id)
+            tempArr[1] = true
+          end
+        end
+    end
+  end
 
 end

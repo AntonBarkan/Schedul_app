@@ -2,17 +2,16 @@
 <div>
   Please select shifts you can work.
 </div>
-</br>
-<div align="center"><b>First week.</b></div>
-<table id="part_time_table_first" style="margin: 0px auto;width: 90%;text-align: center;">
+
+<table id="part_time_table_first"  style="margin: 0px auto;width: 90%;text-align: center;">
   <tr>
-    <td><%= @days_of_week[0] %></td>
-    <td><%= @days_of_week[1] %></td>
-    <td><%= @days_of_week[2] %></td>
-    <td><%= @days_of_week[3] %></td>
-    <td><%= @days_of_week[4] %></td>
-    <td><%= @days_of_week[5] %></td>
-    <td><%= @days_of_week[6] %></td>
+    <td class="header"><%= @days_of_week[0] %></td>
+    <td class="header"><%= @days_of_week[1] %></td>
+    <td class="header"><%= @days_of_week[2] %></td>
+    <td class="header"><%= @days_of_week[3] %></td>
+    <td class="header"><%= @days_of_week[4] %></td>
+    <td class="header"><%= @days_of_week[5] %></td>
+    <td class="header"><%= @days_of_week[6] %></td>
   </tr>
   <tr>
     <td onclick='changeColor(this)' class = <%= getClass("Sunday_morning", 1)%>>
@@ -84,93 +83,6 @@
     </td>
   </tr>
 </table>
-<br/>
-
-
-<div align="center"><b>Second week.</b></div>
-<table id="part_time_table_second" style="margin: 0px auto;width: 90%;text-align: center;">
-  <tr>
-    <td><%= @days_of_week2[0] %></td>
-    <td><%= @days_of_week2[1] %></td>
-    <td><%= @days_of_week2[2] %></td>
-    <td><%= @days_of_week2[3] %></td>
-    <td><%= @days_of_week2[4] %></td>
-    <td><%= @days_of_week2[5] %></td>
-    <td><%= @days_of_week2[6] %></td>
-  </tr>
-  <tr>
-    <td onclick='changeColor(this)' class = <%= getClass("Sunday_morning", 2)%>>
-      <%= label :some_label, "Sunday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Monday_morning", 2)%>>
-      <%= label :some_label, "Monday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Tuesday_morning", 2)%>>
-      <%= label :some_label, "Tuesday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Wednesday_morning", 2)%>>
-      <%= label :some_label, "Wednesday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Thursday_morning", 2)%>>
-      <%= label :some_label, "Thursday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Friday_morning", 2)%>>
-      <%= label :some_label, "Friday morning" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Saturday_morning", 2)%>>
-      <%= label :some_label, "Saturday morning" %>
-    </td>
-  </tr>
-  <tr>
-    <td onclick='changeColor(this)' class = <%= getClass("Sunday_evening", 2)%>>
-      <%= label :some_label, "Sunday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Monday_evening", 2)%>>
-      <%= label :some_label, "Monday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Tuesday_evening", 2)%>>
-      <%= label :some_label, "Tuesday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Wednesday_evening", 2)%>>
-      <%= label :some_label, "Wednesday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Thursday_evening", 2)%>>
-      <%= label :some_label, "Thursday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Friday_evening", 2)%>>
-      <%= label :some_label, "Friday evening" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Saturday_evening", 2)%>>
-      <%= label :some_label, "Saturday evening" %>
-    </td>
-  </tr>
-  <tr>
-    <td onclick='changeColor(this)' class = <%= getClass("Sunday_night", 2)%>>
-      <%= label :some_label, "Sunday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Monday_night", 2)%>>
-      <%= label :some_label, "Monday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Tuesday_night", 2)%>>
-      <%= label :some_label, "Tuesday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Wednesday_night", 2)%>>
-      <%= label :some_label, "Wednesday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Thursday_night", 2)%>>
-      <%= label :some_label, "Thursday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Friday_night", 2)%>>
-      <%= label :some_label, "Friday night" %>
-    </td>
-    <td onclick='changeColor(this)' class = <%= getClass("Saturday_night", 2)%>>
-      <%= label :some_label, "Saturday night" %>
-    </td>
-  </tr>
-
-</table>
-
-<br/>
 
 <div style="text-align:center">
   <%= link_to "Submit", '#', :onclick => "submit_part()", class: "btn btn-large btn-primary" %>

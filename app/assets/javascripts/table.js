@@ -9,10 +9,6 @@
 
 function changeColor(td)
 {
-    if (cliced) {
-        message();
-        return ;
-    }
     if (td.className.indexOf("selectedCell") == -1){
         td.className += "selectedCell"  ;
     } else {
@@ -20,11 +16,7 @@ function changeColor(td)
     }
 }
 
-cliced = false;
 
-function message() {
-    alert("Submitting! Please wait...")
-}
 
 var selector =  function(elements, map, fromFull){
     var counter = 0;
@@ -60,29 +52,17 @@ var getString = function(map){
 
 
 function submit_full() {
-    if (cliced) {
-        message();
-        return ;
-    }
 
-    cliced = true;
-    $('#submit_full').addClass('disabled');
-//    $('#week_dropdown').prop("disabled", "disabled");
-    $('#submit_full').html("Submitting! Please wait...");
 
     var map1 ={};
-    var map2 ={};
 
 
 
     if (!selector($("#full_time_table_first").find("td"), map1, true)) {
         return;
     }
-    if (!selector($("#full_time_table_second").find("td"), map2, true)) {
-        return;
-    }
 
-    var string = "first:" + getString(map1) + ';' + "second:" + getString(map2);
+    var string = "first:" + getString(map1) +";" ;
 
     console.log(string);
 
@@ -95,11 +75,10 @@ function submit_full() {
 
 function submit_part() {
     var map1 = {};
-    var map2 = {};
+
 
     selector($("#part_time_table_first").find("td"), map1, false);
-    selector($("#part_time_table_second").find("td"), map2, false);
-    var string = "first:" + getString(map1) + ';' + "second:" + getString(map2);
+    var string = "first:" + getString(map1) + ';';
     console.log(string);
     $.post('/ajax/submit_part.json', {
         string: string
