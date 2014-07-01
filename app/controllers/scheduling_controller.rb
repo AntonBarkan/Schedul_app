@@ -113,7 +113,7 @@ class SchedulingController < ApplicationController
 
   def proccess_shifts(arr)
     startDate = getStartDate
-    Shifts.where(:week_number => getStartDate).destroy_all
+    Shifts.where(:week_number => @days_of_week[0]).destroy_all
     arr.each do |temp|
       shift_info = temp.split('_')
       day = shift_info[0].to_s
@@ -121,7 +121,7 @@ class SchedulingController < ApplicationController
       worker = shift_info[4].to_i
       #Shifts.create(:name => day + '_' + time, :worker => worker)
       new_shift = Shifts.create!
-      new_shift.week_number = Time.now.strftime("%U").to_s
+      new_shift.week_number = @days_of_week[0]
       new_shift.shift_name = day+'_'+time
       new_shift.user_id = worker
       new_shift.save!
@@ -130,12 +130,12 @@ class SchedulingController < ApplicationController
   end
 
   def alreadyExistRecords?
-    Shifts.where(:week_number => Time.now.strftime("%U").to_s) != nil
+    Shifts.where(:week_number => @days_of_week[0]) != nil
   end
 
   def loadFromDB
     #@shiftMap = Hash.new
-    allshifts = Shifts.where(:week_number => Time.now.strftime("%U").to_s)
+    allshifts = Shifts.where(:week_number => @days_of_week[0])
     if allshifts == nil
       return
     end

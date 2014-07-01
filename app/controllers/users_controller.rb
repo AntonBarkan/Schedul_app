@@ -145,7 +145,7 @@ class UsersController < ApplicationController
   end
 
   def create_events_for_calendar(day_name, day, hash_map )
-    shifts = Shifts.where(:shift_name => day_name + '_morning' ,:week_number => DateTime.parse(day))
+    shifts = Shifts.where(:shift_name => day_name + '_morning' ,:week_number => day)
     if !shifts.nil?
       if shifts.kind_of? Shifts
         user = User.find(shifts.user_id)
@@ -158,7 +158,7 @@ class UsersController < ApplicationController
       end
     end
 
-    shifts = Shifts.find_by(:shift_name => day_name + '_evening' ,:week_number => DateTime.parse(day))
+    shifts = Shifts.find_by(:shift_name => day_name + '_evening' ,:week_number => day)
     if !shifts.nil?
       if shifts.kind_of? Shifts
         user = User.find(shifts.user_id)
@@ -171,7 +171,7 @@ class UsersController < ApplicationController
       end
     end
 
-    shifts = Shifts.find_by(:shift_name => day_name + '_night' ,:week_number => DateTime.parse(day))
+    shifts = Shifts.find_by(:shift_name => day_name + '_night' ,:week_number => day)
     if !shifts.nil?
       if shifts.kind_of? Shifts
         user = User.find(shifts.user_id)
